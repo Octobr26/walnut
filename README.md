@@ -1,85 +1,216 @@
 # walnut
 
-`walnut` is an offline, terminal-first NeetCode 150 practice CLI. It ships local
-problem metadata, starters, reference solutions for seeded problems, a Python
-runner, and local-only progress tracking under `.walnut/`.
+`walnut` is a small offline LeetCode practice CLI.
+I made it so I could keep practicing on long flights, while traveling, or anytime I do not have Wi-Fi.
 
-Fast setup:
+It gives you the NeetCode 150 roadmap, local problem files, starters, seeded reference solutions, a test runner, cheat sheets, and local progress tracking from the terminal.
+
+## What You Get
+
+- A terminal-first way to browse and practice the NeetCode 150.
+- Local starters and tests for seeded problems.
+- Cheat sheets for every roadmap topic.
+- Private `solution.py`, `notes.md`, timers, and progress.
+- No LeetCode login, browser, or Wi-Fi needed after setup.
+
+## Quick Start
+
+Install from the repo root:
 
 ```bash
 ./setup
 ```
 
-Then:
+Then open Walnut:
 
 ```bash
 walnut
+```
+
+In an interactive terminal, plain `walnut` opens the browse interface.
+Use `walnut home` for the static dashboard, or `walnut tui` when you want to be explicit.
+
+## Practice Flow
+
+Open the browse interface:
+
+```bash
+walnut
+```
+
+From there:
+
+1. Use `j/k` to move around the list.
+2. Press `[` or `]` to switch between topics and the full problem list.
+3. Press `enter` on a topic to drill in.
+4. Highlight a problem and press `s` to start it.
+5. Press `e` to open the selected `solution.py`.
+6. Press `t` to run local tests.
+7. Press `n` to open private notes.
+8. Press `c` to open the cheat sheet.
+
+You can also do the same flow with direct commands:
+
+```bash
 walnut topics
+walnut list arrays-and-hashing
 walnut show 3
 walnut pick 3
+```
+
+Write your answer in the generated `solution.py` file:
+
+```text
+problems/01-arrays-and-hashing/03-two-sum/solution.py
+```
+
+Run it locally:
+
+```bash
 walnut test 3 --perf
 ```
 
-See [docs/QUICKSTART.md](docs/QUICKSTART.md) for the lowest-friction usage path.
-See [docs/REPO_GUIDE.md](docs/REPO_GUIDE.md) for a map of the repo and everyday commands.
+Use a dry run when you do not want to update progress:
 
 ```bash
-./setup
-walnut
-walnut doctor
-walnut topics
-walnut show 3
-walnut pick 3
-walnut test 3
-walnut sync-roadmap
-walnut open-official 3 --print
-walnut notes 3
-walnut cheat 3
+walnut run 3 --perf
 ```
 
-`walnut tui` opens a browse-and-preview interface: left pane tabs for topics
-(enter to drill in, esc to back out) and the flat problem list, right pane shows
-the highlighted problem, bottom bar tracks the active problem, timer, and last
-test result.
-Running plain `walnut` opens that interface in an interactive terminal; use
-`walnut home` for the static dashboard.
-Keys: `j/k` move, `[`/`]` switch tabs, `enter` open topic, `s` start,
-`r` reset, `n` notes, `c` cheat sheet, `/` filter, `q` quit. Run tests from a second terminal with `walnut test <id>`;
-the TUI picks up results within a second.
+## Useful Commands
 
-Per-topic cheat sheets live in `docs/cheatsheets/` (18 topics plus `python-stdlib`
-and `complexity`). `walnut cheat` shows the sheet for the active problem's topic;
-`walnut cheat <topic|problem id|python|complexity>` targets one directly, and
-`walnut cheat --list` shows all sheets.
+| What you need | Command |
+| --- | --- |
+| Check setup | `walnut doctor` |
+| Show topics | `walnut topics` |
+| List a topic | `walnut list two-pointers` |
+| Read a problem | `walnut show 3` |
+| Start solving | `walnut pick 3` |
+| Open solution in editor | `walnut edit 3` |
+| Run tests | `walnut test 3 --perf` |
+| Print private notes path | `walnut notes 3` |
+| Open private notes in editor | `walnut notes 3 --open` |
+| Open a cheat sheet | `walnut cheat 3` |
+| Print official links | `walnut open-official 3 --print` |
+| Verify seeded solutions | `walnut verify --all --plain` |
 
-If `walnut` is not found after installing, add the local command directory to
-your `PATH`:
+## Terminal UI
+
+```bash
+walnut
+```
+
+`walnut tui` opens the same interface explicitly.
+
+Key shortcuts:
+
+```text
+j/k       move
+[/]       switch tabs
+enter     open a topic
+s         start the selected problem
+e         open selected solution.py
+t         run local tests
+r         reset the active problem
+n         open notes
+c         open the cheat sheet
+esc       go back
+/         filter
+q         quit
+```
+
+If you prefer another shell or pane, run tests there with `walnut test <id> --perf`.
+The TUI picks up the latest progress within a second.
+
+## Tmux Workflow
+
+Walnut works well with tmux, Ghostty tabs, iTerm panes, or any setup where you keep multiple terminal windows open.
+
+The layout I use is:
+
+```text
+walnut
+  home    runs `walnut`
+  editor  opens the selected solution.py when I press e
+  notes   opens the selected notes.md when I press n
+```
+
+My local `tm walnut` shortcut creates that session for me.
+The important part is that the `home` window runs Walnut with these environment variables:
+
+```bash
+WALNUT_TMUX_SESSION=walnut \
+WALNUT_TMUX_EDITOR_WINDOW=editor \
+WALNUT_TMUX_NOTES_WINDOW=notes \
+walnut
+```
+
+To make the same layout manually:
+
+```bash
+tmux new-session -d -s walnut -n home -c "$PWD"
+tmux new-window -t walnut -n editor -c "$PWD"
+tmux new-window -t walnut -n notes -c "$PWD"
+tmux send-keys -t walnut:home 'WALNUT_TMUX_SESSION=walnut WALNUT_TMUX_EDITOR_WINDOW=editor WALNUT_TMUX_NOTES_WINDOW=notes walnut' C-m
+tmux attach -t walnut
+```
+
+Inside that setup, `e` sends the selected `solution.py` to the `editor` window, and `n` sends the selected `notes.md` to the `notes` window.
+Without tmux, those keys show the file path so you can open it however you like.
+
+## What Stays Local
+
+Your practice work is intentionally ignored by git:
+
+```text
+**/solution.py
+**/notes.md
+.walnut/
+```
+
+That means your attempts, notes, timers, progress, and local snapshots stay on your machine.
+A fresh clone starts clean.
+
+## Cheat Sheets
+
+Per-topic cheat sheets live in `docs/cheatsheets/`.
+They cover all 18 roadmap topics plus `python-stdlib` and `complexity`.
+
+```bash
+walnut cheat --list
+walnut cheat arrays-and-hashing
+walnut cheat python
+walnut cheat complexity
+```
+
+## If `walnut` Is Not Found
+
+Add the local command directory to your shell path:
 
 ```bash
 export PATH="$HOME/.local/bin:$PATH"
 ```
 
-You can also use the included `Makefile`:
+For zsh, make it permanent:
 
 ```bash
-make setup
-make doctor
-make topics
-make show ID=3
-make test ID=3
-make verify
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
 ```
 
-Use the default output for the nicer Rich terminal view. Add `--plain` when you
-want script-friendly text.
+You can always use the package directly from the repo root:
 
-Personal solution files live beside each problem as `solution.py` and are ignored
-by git. Personal notes can live beside each problem as `notes.md` and are ignored
-by git too. Progress and timers live in `.walnut/` and are ignored too.
+```bash
+python3 -m walnut.cli doctor
+```
 
-`walnut sync-roadmap` refreshes public NeetCode roadmap metadata only: titles,
-topic labels, difficulty, LeetCode IDs, and links. It intentionally does not
-copy LeetCode/NeetCode statements, explanations, or solution text.
+## More Docs
 
-This project links to LeetCode and follows the NeetCode 150 ordering, but all
-included statements, test cases, and reference solutions are original.
+- [Quickstart](docs/QUICKSTART.md)
+- [Repo guide](docs/REPO_GUIDE.md)
+
+## Content Note
+
+`walnut sync-roadmap` refreshes public roadmap metadata only: titles, topic labels, difficulty, LeetCode IDs, and links.
+It does not copy LeetCode or NeetCode statements, explanations, videos, or solution text.
+
+This project links to LeetCode and follows the NeetCode 150 ordering, but the included statements, test cases, and reference solutions are original.
