@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "walnut"
+version = "0.1.0"
+description = "Offline NeetCode-150 practice CLI"
+requires-python = ">=3.9"
+dependencies = ["rich>=13", "textual>=0.60"]
+
+[project.optional-dependencies]
+tui = ["textual>=0.60"]
+
+[project.scripts]
+walnut = "walnut.cli:main"
+
+[tool.setuptools]
+packages = ["walnut"]

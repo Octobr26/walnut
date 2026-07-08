@@ -1,0 +1,19 @@
+# your attempts + local progress - never committed
+**/solution.py
+**/notes.md
+.walnut/
+.claude/
+
+# python noise
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+build/
+dist/
+
+# local test scratch
+.tmp-*/
+
+# os noise
+.DS_Store
