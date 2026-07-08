@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Hard",
+  "dir": "problems/08-tries/03-word-search-ii",
+  "examples": [],
+  "hints": [],
+  "id": 63,
+  "leetcode": 212,
+  "leetcode_url": "https://leetcode.com/problems/word-search-ii/",
+  "neetcode_url": "https://neetcode.io/problems/search-for-word-ii",
+  "pattern": "Tries",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "findWords",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "word-search-ii",
+  "statement": "Word Search II is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Word Search II",
+  "topic": "Tries",
+  "topic_slug": "tries"
+}

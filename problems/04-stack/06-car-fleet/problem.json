@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/04-stack/06-car-fleet",
+  "examples": [],
+  "hints": [],
+  "id": 26,
+  "leetcode": 853,
+  "leetcode_url": "https://leetcode.com/problems/car-fleet/",
+  "neetcode_url": "https://neetcode.io/problems/car-fleet",
+  "pattern": "Stack",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "carFleet",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "car-fleet",
+  "statement": "Car Fleet is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Car Fleet",
+  "topic": "Stack",
+  "topic_slug": "stack"
+}

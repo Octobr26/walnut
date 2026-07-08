@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Hard",
+  "dir": "problems/03-sliding-window/06-sliding-window-maximum",
+  "examples": [],
+  "hints": [],
+  "id": 20,
+  "leetcode": 239,
+  "leetcode_url": "https://leetcode.com/problems/sliding-window-maximum/",
+  "neetcode_url": "https://neetcode.io/problems/sliding-window-maximum",
+  "pattern": "Sliding Window",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "maxSlidingWindow",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "sliding-window-maximum",
+  "statement": "Sliding Window Maximum is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Sliding Window Maximum",
+  "topic": "Sliding Window",
+  "topic_slug": "sliding-window"
+}

@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/13-1-d-dynamic-programming/03-house-robber",
+  "examples": [],
+  "hints": [],
+  "id": 101,
+  "leetcode": 198,
+  "leetcode_url": "https://leetcode.com/problems/house-robber/",
+  "neetcode_url": "https://neetcode.io/problems/house-robber",
+  "pattern": "1-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "rob",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "house-robber",
+  "statement": "House Robber is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "House Robber",
+  "topic": "1-D Dynamic Programming",
+  "topic_slug": "1-d-dynamic-programming"
+}

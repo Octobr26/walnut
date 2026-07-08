@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/09-heap-priority-queue/02-last-stone-weight",
+  "examples": [],
+  "hints": [],
+  "id": 65,
+  "leetcode": 1046,
+  "leetcode_url": "https://leetcode.com/problems/last-stone-weight/",
+  "neetcode_url": "https://neetcode.io/problems/last-stone-weight",
+  "pattern": "Heap / Priority Queue",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "lastStoneWeight",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "last-stone-weight",
+  "statement": "Last Stone Weight is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Last Stone Weight",
+  "topic": "Heap / Priority Queue",
+  "topic_slug": "heap-priority-queue"
+}

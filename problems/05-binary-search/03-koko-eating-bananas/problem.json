@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/05-binary-search/03-koko-eating-bananas",
+  "examples": [],
+  "hints": [],
+  "id": 30,
+  "leetcode": 875,
+  "leetcode_url": "https://leetcode.com/problems/koko-eating-bananas/",
+  "neetcode_url": "https://neetcode.io/problems/eating-bananas",
+  "pattern": "Binary Search",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "minEatingSpeed",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "koko-eating-bananas",
+  "statement": "Koko Eating Bananas is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Koko Eating Bananas",
+  "topic": "Binary Search",
+  "topic_slug": "binary-search"
+}

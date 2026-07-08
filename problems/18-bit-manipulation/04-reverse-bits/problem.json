@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/18-bit-manipulation/04-reverse-bits",
+  "examples": [],
+  "hints": [],
+  "id": 147,
+  "leetcode": 190,
+  "leetcode_url": "https://leetcode.com/problems/reverse-bits/",
+  "neetcode_url": "https://neetcode.io/problems/reverse-bits",
+  "pattern": "Bit Manipulation",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "reverseBits",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "reverse-bits",
+  "statement": "Reverse Bits is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Reverse Bits",
+  "topic": "Bit Manipulation",
+  "topic_slug": "bit-manipulation"
+}

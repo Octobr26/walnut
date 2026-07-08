@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/06-linked-list/02-merge-two-sorted-lists",
+  "examples": [],
+  "hints": [],
+  "id": 36,
+  "leetcode": 21,
+  "leetcode_url": "https://leetcode.com/problems/merge-two-sorted-lists/",
+  "neetcode_url": "https://neetcode.io/problems/merge-two-sorted-linked-lists",
+  "pattern": "Linked List",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "mergeTwoLists",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "merge-two-sorted-lists",
+  "statement": "Merge Two Sorted Lists is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Merge Two Sorted Lists",
+  "topic": "Linked List",
+  "topic_slug": "linked-list"
+}

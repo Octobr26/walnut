@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/15-greedy/06-merge-triplets-to-form-target-triplet",
+  "examples": [],
+  "hints": [],
+  "id": 127,
+  "leetcode": 1899,
+  "leetcode_url": "https://leetcode.com/problems/merge-triplets-to-form-target-triplet/",
+  "neetcode_url": "https://neetcode.io/problems/merge-triplets-to-form-target",
+  "pattern": "Greedy",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "mergeTriplets",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "merge-triplets-to-form-target-triplet",
+  "statement": "Merge Triplets to Form Target Triplet is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Merge Triplets to Form Target Triplet",
+  "topic": "Greedy",
+  "topic_slug": "greedy"
+}

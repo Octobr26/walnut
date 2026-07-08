@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/11-graphs/12-redundant-connection",
+  "examples": [],
+  "hints": [],
+  "id": 91,
+  "leetcode": 684,
+  "leetcode_url": "https://leetcode.com/problems/redundant-connection/",
+  "neetcode_url": "https://neetcode.io/problems/redundant-connection",
+  "pattern": "Graphs",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "findRedundantConnection",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "redundant-connection",
+  "statement": "Redundant Connection is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Redundant Connection",
+  "topic": "Graphs",
+  "topic_slug": "graphs"
+}

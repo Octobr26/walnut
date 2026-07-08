@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/07-trees/12-kth-smallest-element-in-a-bst",
+  "examples": [],
+  "hints": [],
+  "id": 57,
+  "leetcode": 230,
+  "leetcode_url": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
+  "neetcode_url": "https://neetcode.io/problems/kth-smallest-integer-in-bst",
+  "pattern": "Trees",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "kthSmallest",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "kth-smallest-element-in-a-bst",
+  "statement": "Kth Smallest Element in a BST is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Kth Smallest Element In a Bst",
+  "topic": "Trees",
+  "topic_slug": "trees"
+}

@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/12-advanced-graphs/06-cheapest-flights-within-k-stops",
+  "examples": [],
+  "hints": [],
+  "id": 98,
+  "leetcode": 787,
+  "leetcode_url": "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
+  "neetcode_url": "https://neetcode.io/problems/cheapest-flight-path",
+  "pattern": "Advanced Graphs",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "findCheapestPrice",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "cheapest-flights-within-k-stops",
+  "statement": "Cheapest Flights Within K Stops is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Cheapest Flights Within K Stops",
+  "topic": "Advanced Graphs",
+  "topic_slug": "advanced-graphs"
+}

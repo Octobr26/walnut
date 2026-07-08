@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/17-math-and-geometry/01-rotate-image",
+  "examples": [],
+  "hints": [],
+  "id": 136,
+  "leetcode": 48,
+  "leetcode_url": "https://leetcode.com/problems/rotate-image/",
+  "neetcode_url": "https://neetcode.io/problems/rotate-matrix",
+  "pattern": "Math & Geometry",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "rotate",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "rotate-image",
+  "statement": "Rotate Image is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Rotate Image",
+  "topic": "Math & Geometry",
+  "topic_slug": "math-and-geometry"
+}

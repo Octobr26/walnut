@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/13-1-d-dynamic-programming/09-maximum-product-subarray",
+  "examples": [],
+  "hints": [],
+  "id": 107,
+  "leetcode": 152,
+  "leetcode_url": "https://leetcode.com/problems/maximum-product-subarray/",
+  "neetcode_url": "https://neetcode.io/problems/maximum-product-subarray",
+  "pattern": "1-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "maxProduct",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "maximum-product-subarray",
+  "statement": "Maximum Product Subarray is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Maximum Product Subarray",
+  "topic": "1-D Dynamic Programming",
+  "topic_slug": "1-d-dynamic-programming"
+}

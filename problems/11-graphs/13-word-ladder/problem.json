@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Hard",
+  "dir": "problems/11-graphs/13-word-ladder",
+  "examples": [],
+  "hints": [],
+  "id": 92,
+  "leetcode": 127,
+  "leetcode_url": "https://leetcode.com/problems/word-ladder/",
+  "neetcode_url": "https://neetcode.io/problems/word-ladder",
+  "pattern": "Graphs",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "ladderLength",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "word-ladder",
+  "statement": "Word Ladder is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Word Ladder",
+  "topic": "Graphs",
+  "topic_slug": "graphs"
+}

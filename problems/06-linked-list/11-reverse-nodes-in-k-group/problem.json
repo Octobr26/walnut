@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Hard",
+  "dir": "problems/06-linked-list/11-reverse-nodes-in-k-group",
+  "examples": [],
+  "hints": [],
+  "id": 45,
+  "leetcode": 25,
+  "leetcode_url": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
+  "neetcode_url": "https://neetcode.io/problems/reverse-nodes-in-k-group",
+  "pattern": "Linked List",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "reverseKGroup",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "reverse-nodes-in-k-group",
+  "statement": "Reverse Nodes in K-Group is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Reverse Nodes In K Group",
+  "topic": "Linked List",
+  "topic_slug": "linked-list"
+}

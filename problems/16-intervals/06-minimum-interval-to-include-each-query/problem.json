@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Hard",
+  "dir": "problems/16-intervals/06-minimum-interval-to-include-each-query",
+  "examples": [],
+  "hints": [],
+  "id": 135,
+  "leetcode": 1851,
+  "leetcode_url": "https://leetcode.com/problems/minimum-interval-to-include-each-query/",
+  "neetcode_url": "https://neetcode.io/problems/minimum-interval-including-query",
+  "pattern": "Intervals",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "minInterval",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "minimum-interval-to-include-each-query",
+  "statement": "Minimum Interval to Include Each Query is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Minimum Interval to Include Each Query",
+  "topic": "Intervals",
+  "topic_slug": "intervals"
+}

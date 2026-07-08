@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/04-stack/01-valid-parentheses",
+  "examples": [],
+  "hints": [],
+  "id": 21,
+  "leetcode": 20,
+  "leetcode_url": "https://leetcode.com/problems/valid-parentheses/",
+  "neetcode_url": "https://neetcode.io/problems/validate-parentheses",
+  "pattern": "Stack",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "isValid",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "valid-parentheses",
+  "statement": "Valid Parentheses is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Valid Parentheses",
+  "topic": "Stack",
+  "topic_slug": "stack"
+}

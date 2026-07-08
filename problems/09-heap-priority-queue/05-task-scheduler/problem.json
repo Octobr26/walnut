@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/09-heap-priority-queue/05-task-scheduler",
+  "examples": [],
+  "hints": [],
+  "id": 68,
+  "leetcode": 621,
+  "leetcode_url": "https://leetcode.com/problems/task-scheduler/",
+  "neetcode_url": "https://neetcode.io/problems/task-scheduling",
+  "pattern": "Heap / Priority Queue",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "leastInterval",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "task-scheduler",
+  "statement": "Task Scheduler is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Task Scheduler",
+  "topic": "Heap / Priority Queue",
+  "topic_slug": "heap-priority-queue"
+}

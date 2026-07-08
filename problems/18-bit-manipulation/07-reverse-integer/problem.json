@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/18-bit-manipulation/07-reverse-integer",
+  "examples": [],
+  "hints": [],
+  "id": 150,
+  "leetcode": 7,
+  "leetcode_url": "https://leetcode.com/problems/reverse-integer/",
+  "neetcode_url": "https://neetcode.io/problems/reverse-integer",
+  "pattern": "Bit Manipulation",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "reverse",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "reverse-integer",
+  "statement": "Reverse Integer is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Reverse Integer",
+  "topic": "Bit Manipulation",
+  "topic_slug": "bit-manipulation"
+}

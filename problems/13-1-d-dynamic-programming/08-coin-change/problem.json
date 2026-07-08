@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/13-1-d-dynamic-programming/08-coin-change",
+  "examples": [],
+  "hints": [],
+  "id": 106,
+  "leetcode": 322,
+  "leetcode_url": "https://leetcode.com/problems/coin-change/",
+  "neetcode_url": "https://neetcode.io/problems/coin-change",
+  "pattern": "1-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "coinChange",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "coin-change",
+  "statement": "Coin Change is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Coin Change",
+  "topic": "1-D Dynamic Programming",
+  "topic_slug": "1-d-dynamic-programming"
+}

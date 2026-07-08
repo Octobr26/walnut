@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/14-2-d-dynamic-programming/03-best-time-to-buy-and-sell-stock-with-cooldown",
+  "examples": [],
+  "hints": [],
+  "id": 113,
+  "leetcode": 309,
+  "leetcode_url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
+  "neetcode_url": "https://neetcode.io/problems/buy-and-sell-crypto-with-cooldown",
+  "pattern": "2-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "maxProfit",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "best-time-to-buy-and-sell-stock-with-cooldown",
+  "statement": "Best Time to Buy and Sell Stock With Cooldown is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Best Time to Buy And Sell Stock With Cooldown",
+  "topic": "2-D Dynamic Programming",
+  "topic_slug": "2-d-dynamic-programming"
+}

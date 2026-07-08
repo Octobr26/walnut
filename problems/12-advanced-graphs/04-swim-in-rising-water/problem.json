@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Hard",
+  "dir": "problems/12-advanced-graphs/04-swim-in-rising-water",
+  "examples": [],
+  "hints": [],
+  "id": 96,
+  "leetcode": 778,
+  "leetcode_url": "https://leetcode.com/problems/swim-in-rising-water/",
+  "neetcode_url": "https://neetcode.io/problems/swim-in-rising-water",
+  "pattern": "Advanced Graphs",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "swimInWater",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "swim-in-rising-water",
+  "statement": "Swim in Rising Water is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Swim In Rising Water",
+  "topic": "Advanced Graphs",
+  "topic_slug": "advanced-graphs"
+}

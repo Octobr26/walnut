@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/17-math-and-geometry/04-happy-number",
+  "examples": [],
+  "hints": [],
+  "id": 139,
+  "leetcode": 202,
+  "leetcode_url": "https://leetcode.com/problems/happy-number/",
+  "neetcode_url": "https://neetcode.io/problems/non-cyclical-number",
+  "pattern": "Math & Geometry",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "isHappy",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "happy-number",
+  "statement": "Happy Number is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Happy Number",
+  "topic": "Math & Geometry",
+  "topic_slug": "math-and-geometry"
+}

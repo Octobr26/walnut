@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/06-linked-list/07-linked-list-cycle",
+  "examples": [],
+  "hints": [],
+  "id": 41,
+  "leetcode": 141,
+  "leetcode_url": "https://leetcode.com/problems/linked-list-cycle/",
+  "neetcode_url": "https://neetcode.io/problems/linked-list-cycle-detection",
+  "pattern": "Linked List",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "hasCycle",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "linked-list-cycle",
+  "statement": "Linked List Cycle is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Linked List Cycle",
+  "topic": "Linked List",
+  "topic_slug": "linked-list"
+}

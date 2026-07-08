@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/16-intervals/03-non-overlapping-intervals",
+  "examples": [],
+  "hints": [],
+  "id": 132,
+  "leetcode": 435,
+  "leetcode_url": "https://leetcode.com/problems/non-overlapping-intervals/",
+  "neetcode_url": "https://neetcode.io/problems/non-overlapping-intervals",
+  "pattern": "Intervals",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "eraseOverlapIntervals",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "non-overlapping-intervals",
+  "statement": "Non-Overlapping Intervals is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Non Overlapping Intervals",
+  "topic": "Intervals",
+  "topic_slug": "intervals"
+}

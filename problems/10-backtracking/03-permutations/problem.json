@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/10-backtracking/03-permutations",
+  "examples": [],
+  "hints": [],
+  "id": 73,
+  "leetcode": 46,
+  "leetcode_url": "https://leetcode.com/problems/permutations/",
+  "neetcode_url": "https://neetcode.io/problems/permutations",
+  "pattern": "Backtracking",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "permute",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "permutations",
+  "statement": "Permutations is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Permutations",
+  "topic": "Backtracking",
+  "topic_slug": "backtracking"
+}

@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/16-intervals/02-merge-intervals",
+  "examples": [],
+  "hints": [],
+  "id": 131,
+  "leetcode": 56,
+  "leetcode_url": "https://leetcode.com/problems/merge-intervals/",
+  "neetcode_url": "https://neetcode.io/problems/merge-intervals",
+  "pattern": "Intervals",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "merge",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "merge-intervals",
+  "statement": "Merge Intervals is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Merge Intervals",
+  "topic": "Intervals",
+  "topic_slug": "intervals"
+}

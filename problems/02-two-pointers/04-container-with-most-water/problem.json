@@ -1,0 +1,97 @@
+{
+  "cases": [
+    {
+      "args": {
+        "height": [
+          1,
+          8,
+          6,
+          2,
+          5,
+          4,
+          8,
+          3,
+          7
+        ]
+      },
+      "expected": 49,
+      "kind": "example"
+    },
+    {
+      "args": {
+        "height": [
+          1,
+          1
+        ]
+      },
+      "expected": 1,
+      "kind": "edge"
+    },
+    {
+      "args": {
+        "height": [
+          4,
+          3,
+          2,
+          1,
+          4
+        ]
+      },
+      "expected": 16,
+      "kind": "edge"
+    },
+    {
+      "args": {
+        "height": [
+          1,
+          2,
+          1
+        ]
+      },
+      "expected": 2,
+      "kind": "edge"
+    },
+    {
+      "gen": {
+        "fn": "make_case",
+        "seed": 1
+      },
+      "kind": "stress",
+      "timeout_sec": 5
+    }
+  ],
+  "constraints": [
+    "Area is width times the shorter height.",
+    "Moving the shorter side is the useful greedy step."
+  ],
+  "difficulty": "Medium",
+  "dir": "problems/02-two-pointers/04-container-with-most-water",
+  "examples": [
+    {
+      "input": "height = [1,8,6,2,5,4,8,3,7]",
+      "output": "49"
+    }
+  ],
+  "hints": [
+    "Start at both ends.",
+    "The smaller height limits the current area.",
+    "Move the pointer at the smaller height inward."
+  ],
+  "id": 13,
+  "leetcode": 11,
+  "leetcode_url": "https://leetcode.com/problems/container-with-most-water/",
+  "neetcode_url": "https://neetcode.io/problems/max-water-container",
+  "pattern": "Opposing pointers maximize area",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "maxArea",
+    "timeout_sec": 5
+  },
+  "seeded": true,
+  "slug": "container-with-most-water",
+  "statement": "Given vertical line heights, choose two lines that hold the most water with the x-axis. Return the maximum area.",
+  "title": "Container With Most Water",
+  "topic": "Two Pointers",
+  "topic_slug": "two-pointers"
+}

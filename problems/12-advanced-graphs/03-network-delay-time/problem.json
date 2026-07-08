@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/12-advanced-graphs/03-network-delay-time",
+  "examples": [],
+  "hints": [],
+  "id": 95,
+  "leetcode": 743,
+  "leetcode_url": "https://leetcode.com/problems/network-delay-time/",
+  "neetcode_url": "https://neetcode.io/problems/network-delay-time",
+  "pattern": "Advanced Graphs",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "networkDelayTime",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "network-delay-time",
+  "statement": "Network Delay Time is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Network Delay Time",
+  "topic": "Advanced Graphs",
+  "topic_slug": "advanced-graphs"
+}

@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/17-math-and-geometry/08-detect-squares",
+  "examples": [],
+  "hints": [],
+  "id": 143,
+  "leetcode": 2013,
+  "leetcode_url": "https://leetcode.com/problems/detect-squares/",
+  "neetcode_url": "https://neetcode.io/problems/count-squares",
+  "pattern": "Math & Geometry",
+  "runner": {
+    "class": "DetectSquares",
+    "compare": "exact",
+    "entry": "design",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "detect-squares",
+  "statement": "Detect Squares is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Detect Squares",
+  "topic": "Math & Geometry",
+  "topic_slug": "math-and-geometry"
+}

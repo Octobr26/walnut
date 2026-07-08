@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/10-backtracking/06-word-search",
+  "examples": [],
+  "hints": [],
+  "id": 76,
+  "leetcode": 79,
+  "leetcode_url": "https://leetcode.com/problems/word-search/",
+  "neetcode_url": "https://neetcode.io/problems/search-for-word",
+  "pattern": "Backtracking",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "exist",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "word-search",
+  "statement": "Word Search is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Word Search",
+  "topic": "Backtracking",
+  "topic_slug": "backtracking"
+}

@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/05-binary-search/02-search-a-2d-matrix",
+  "examples": [],
+  "hints": [],
+  "id": 29,
+  "leetcode": 74,
+  "leetcode_url": "https://leetcode.com/problems/search-a-2d-matrix/",
+  "neetcode_url": "https://neetcode.io/problems/search-2d-matrix",
+  "pattern": "Binary Search",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "searchMatrix",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "search-a-2d-matrix",
+  "statement": "Search a 2D Matrix is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Search a 2D Matrix",
+  "topic": "Binary Search",
+  "topic_slug": "binary-search"
+}

@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/13-1-d-dynamic-programming/10-word-break",
+  "examples": [],
+  "hints": [],
+  "id": 108,
+  "leetcode": 139,
+  "leetcode_url": "https://leetcode.com/problems/word-break/",
+  "neetcode_url": "https://neetcode.io/problems/word-break",
+  "pattern": "1-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "wordBreak",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "word-break",
+  "statement": "Word Break is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Word Break",
+  "topic": "1-D Dynamic Programming",
+  "topic_slug": "1-d-dynamic-programming"
+}

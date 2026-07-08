@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Hard",
+  "dir": "problems/03-sliding-window/05-minimum-window-substring",
+  "examples": [],
+  "hints": [],
+  "id": 19,
+  "leetcode": 76,
+  "leetcode_url": "https://leetcode.com/problems/minimum-window-substring/",
+  "neetcode_url": "https://neetcode.io/problems/minimum-window-with-characters",
+  "pattern": "Sliding Window",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "minWindow",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "minimum-window-substring",
+  "statement": "Minimum Window Substring is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Minimum Window Substring",
+  "topic": "Sliding Window",
+  "topic_slug": "sliding-window"
+}

@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/07-trees/08-binary-tree-level-order-traversal",
+  "examples": [],
+  "hints": [],
+  "id": 53,
+  "leetcode": 102,
+  "leetcode_url": "https://leetcode.com/problems/binary-tree-level-order-traversal/",
+  "neetcode_url": "https://neetcode.io/problems/level-order-traversal-of-binary-tree",
+  "pattern": "Trees",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "levelOrder",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "binary-tree-level-order-traversal",
+  "statement": "Binary Tree Level Order Traversal is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Binary Tree Level Order Traversal",
+  "topic": "Trees",
+  "topic_slug": "trees"
+}

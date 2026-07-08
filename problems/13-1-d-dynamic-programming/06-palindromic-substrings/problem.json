@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/13-1-d-dynamic-programming/06-palindromic-substrings",
+  "examples": [],
+  "hints": [],
+  "id": 104,
+  "leetcode": 647,
+  "leetcode_url": "https://leetcode.com/problems/palindromic-substrings/",
+  "neetcode_url": "https://neetcode.io/problems/palindromic-substrings",
+  "pattern": "1-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "countSubstrings",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "palindromic-substrings",
+  "statement": "Palindromic Substrings is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Palindromic Substrings",
+  "topic": "1-D Dynamic Programming",
+  "topic_slug": "1-d-dynamic-programming"
+}

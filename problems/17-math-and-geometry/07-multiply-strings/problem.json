@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/17-math-and-geometry/07-multiply-strings",
+  "examples": [],
+  "hints": [],
+  "id": 142,
+  "leetcode": 43,
+  "leetcode_url": "https://leetcode.com/problems/multiply-strings/",
+  "neetcode_url": "https://neetcode.io/problems/multiply-strings",
+  "pattern": "Math & Geometry",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "multiply",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "multiply-strings",
+  "statement": "Multiply Strings is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Multiply Strings",
+  "topic": "Math & Geometry",
+  "topic_slug": "math-and-geometry"
+}

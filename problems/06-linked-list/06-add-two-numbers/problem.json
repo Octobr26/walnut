@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/06-linked-list/06-add-two-numbers",
+  "examples": [],
+  "hints": [],
+  "id": 40,
+  "leetcode": 2,
+  "leetcode_url": "https://leetcode.com/problems/add-two-numbers/",
+  "neetcode_url": "https://neetcode.io/problems/add-two-numbers",
+  "pattern": "Linked List",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "addTwoNumbers",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "add-two-numbers",
+  "statement": "Add Two Numbers is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Add Two Numbers",
+  "topic": "Linked List",
+  "topic_slug": "linked-list"
+}

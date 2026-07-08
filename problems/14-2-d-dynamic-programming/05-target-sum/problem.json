@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/14-2-d-dynamic-programming/05-target-sum",
+  "examples": [],
+  "hints": [],
+  "id": 115,
+  "leetcode": 494,
+  "leetcode_url": "https://leetcode.com/problems/target-sum/",
+  "neetcode_url": "https://neetcode.io/problems/target-sum",
+  "pattern": "2-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "findTargetSumWays",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "target-sum",
+  "statement": "Target Sum is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Target Sum",
+  "topic": "2-D Dynamic Programming",
+  "topic_slug": "2-d-dynamic-programming"
+}

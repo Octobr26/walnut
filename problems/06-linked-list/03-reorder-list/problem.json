@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/06-linked-list/03-reorder-list",
+  "examples": [],
+  "hints": [],
+  "id": 37,
+  "leetcode": 143,
+  "leetcode_url": "https://leetcode.com/problems/reorder-list/",
+  "neetcode_url": "https://neetcode.io/problems/reorder-linked-list",
+  "pattern": "Linked List",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "reorderList",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "reorder-list",
+  "statement": "Reorder List is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Reorder List",
+  "topic": "Linked List",
+  "topic_slug": "linked-list"
+}

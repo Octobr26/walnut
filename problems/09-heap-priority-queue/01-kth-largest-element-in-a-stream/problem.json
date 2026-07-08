@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/09-heap-priority-queue/01-kth-largest-element-in-a-stream",
+  "examples": [],
+  "hints": [],
+  "id": 64,
+  "leetcode": 703,
+  "leetcode_url": "https://leetcode.com/problems/kth-largest-element-in-a-stream/",
+  "neetcode_url": "https://neetcode.io/problems/kth-largest-integer-in-a-stream",
+  "pattern": "Heap / Priority Queue",
+  "runner": {
+    "class": "KthLargest",
+    "compare": "exact",
+    "entry": "design",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "kth-largest-element-in-a-stream",
+  "statement": "Kth Largest Element in a Stream is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Kth Largest Element In a Stream",
+  "topic": "Heap / Priority Queue",
+  "topic_slug": "heap-priority-queue"
+}

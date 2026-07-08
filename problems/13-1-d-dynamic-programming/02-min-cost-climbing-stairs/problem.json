@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/13-1-d-dynamic-programming/02-min-cost-climbing-stairs",
+  "examples": [],
+  "hints": [],
+  "id": 100,
+  "leetcode": 746,
+  "leetcode_url": "https://leetcode.com/problems/min-cost-climbing-stairs/",
+  "neetcode_url": "https://neetcode.io/problems/min-cost-climbing-stairs",
+  "pattern": "1-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "minCostClimbingStairs",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "min-cost-climbing-stairs",
+  "statement": "Min Cost Climbing Stairs is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Min Cost Climbing Stairs",
+  "topic": "1-D Dynamic Programming",
+  "topic_slug": "1-d-dynamic-programming"
+}

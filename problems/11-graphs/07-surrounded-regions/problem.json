@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/11-graphs/07-surrounded-regions",
+  "examples": [],
+  "hints": [],
+  "id": 86,
+  "leetcode": 130,
+  "leetcode_url": "https://leetcode.com/problems/surrounded-regions/",
+  "neetcode_url": "https://neetcode.io/problems/surrounded-regions",
+  "pattern": "Graphs",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "solve",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "surrounded-regions",
+  "statement": "Surrounded Regions is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Surrounded Regions",
+  "topic": "Graphs",
+  "topic_slug": "graphs"
+}

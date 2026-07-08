@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/04-stack/04-generate-parentheses",
+  "examples": [],
+  "hints": [],
+  "id": 24,
+  "leetcode": 22,
+  "leetcode_url": "https://leetcode.com/problems/generate-parentheses/",
+  "neetcode_url": "https://neetcode.io/problems/generate-parentheses",
+  "pattern": "Stack",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "generateParenthesis",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "generate-parentheses",
+  "statement": "Generate Parentheses is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Generate Parentheses",
+  "topic": "Stack",
+  "topic_slug": "stack"
+}

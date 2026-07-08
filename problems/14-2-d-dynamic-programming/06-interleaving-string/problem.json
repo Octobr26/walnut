@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/14-2-d-dynamic-programming/06-interleaving-string",
+  "examples": [],
+  "hints": [],
+  "id": 116,
+  "leetcode": 97,
+  "leetcode_url": "https://leetcode.com/problems/interleaving-string/",
+  "neetcode_url": "https://neetcode.io/problems/interleaving-string",
+  "pattern": "2-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "isInterleave",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "interleaving-string",
+  "statement": "Interleaving String is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Interleaving String",
+  "topic": "2-D Dynamic Programming",
+  "topic_slug": "2-d-dynamic-programming"
+}

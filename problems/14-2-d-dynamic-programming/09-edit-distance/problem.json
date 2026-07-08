@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/14-2-d-dynamic-programming/09-edit-distance",
+  "examples": [],
+  "hints": [],
+  "id": 119,
+  "leetcode": 72,
+  "leetcode_url": "https://leetcode.com/problems/edit-distance/",
+  "neetcode_url": "https://neetcode.io/problems/edit-distance",
+  "pattern": "2-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "minDistance",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "edit-distance",
+  "statement": "Edit Distance is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Edit Distance",
+  "topic": "2-D Dynamic Programming",
+  "topic_slug": "2-d-dynamic-programming"
+}

@@ -1,0 +1,84 @@
+{
+  "cases": [
+    {
+      "args": {
+        "s": "anagram",
+        "t": "nagaram"
+      },
+      "expected": true,
+      "kind": "example"
+    },
+    {
+      "args": {
+        "s": "rat",
+        "t": "car"
+      },
+      "expected": false,
+      "kind": "example"
+    },
+    {
+      "args": {
+        "s": "",
+        "t": ""
+      },
+      "expected": true,
+      "kind": "edge",
+      "note": "empty strings"
+    },
+    {
+      "args": {
+        "s": "aacc",
+        "t": "ccac"
+      },
+      "expected": false,
+      "kind": "edge",
+      "note": "same letters different counts"
+    },
+    {
+      "gen": {
+        "fn": "make_case",
+        "seed": 1
+      },
+      "kind": "stress",
+      "timeout_sec": 3
+    }
+  ],
+  "constraints": [
+    "Inputs are strings.",
+    "A count-based solution should run in linear time."
+  ],
+  "difficulty": "Easy",
+  "dir": "problems/01-arrays-and-hashing/02-valid-anagram",
+  "examples": [
+    {
+      "input": "s = \"anagram\", t = \"nagaram\"",
+      "output": "true"
+    },
+    {
+      "input": "s = \"rat\", t = \"car\"",
+      "output": "false"
+    }
+  ],
+  "hints": [
+    "Anagrams must have the same length.",
+    "Count how many times each character appears.",
+    "The two count maps must match exactly."
+  ],
+  "id": 2,
+  "leetcode": 242,
+  "leetcode_url": "https://leetcode.com/problems/valid-anagram/",
+  "neetcode_url": "https://neetcode.io/problems/is-anagram",
+  "pattern": "Character counting",
+  "runner": {
+    "compare": "bool",
+    "entry": "method",
+    "method": "isAnagram",
+    "timeout_sec": 3
+  },
+  "seeded": true,
+  "slug": "valid-anagram",
+  "statement": "Given two strings, return true when they contain the same characters with the same counts, regardless of order.",
+  "title": "Valid Anagram",
+  "topic": "Arrays & Hashing",
+  "topic_slug": "arrays-and-hashing"
+}

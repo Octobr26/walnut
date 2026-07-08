@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/18-bit-manipulation/05-missing-number",
+  "examples": [],
+  "hints": [],
+  "id": 148,
+  "leetcode": 268,
+  "leetcode_url": "https://leetcode.com/problems/missing-number/",
+  "neetcode_url": "https://neetcode.io/problems/missing-number",
+  "pattern": "Bit Manipulation",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "missingNumber",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "missing-number",
+  "statement": "Missing Number is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Missing Number",
+  "topic": "Bit Manipulation",
+  "topic_slug": "bit-manipulation"
+}

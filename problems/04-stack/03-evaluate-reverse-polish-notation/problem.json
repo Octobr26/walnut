@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/04-stack/03-evaluate-reverse-polish-notation",
+  "examples": [],
+  "hints": [],
+  "id": 23,
+  "leetcode": 150,
+  "leetcode_url": "https://leetcode.com/problems/evaluate-reverse-polish-notation/",
+  "neetcode_url": "https://neetcode.io/problems/evaluate-reverse-polish-notation",
+  "pattern": "Stack",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "evalRPN",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "evaluate-reverse-polish-notation",
+  "statement": "Evaluate Reverse Polish Notation is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Evaluate Reverse Polish Notation",
+  "topic": "Stack",
+  "topic_slug": "stack"
+}

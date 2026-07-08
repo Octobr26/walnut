@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/11-graphs/10-graph-valid-tree",
+  "examples": [],
+  "hints": [],
+  "id": 89,
+  "leetcode": 261,
+  "leetcode_url": "https://leetcode.com/problems/graph-valid-tree/",
+  "neetcode_url": "https://neetcode.io/problems/valid-tree",
+  "pattern": "Graphs",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "validTree",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "graph-valid-tree",
+  "statement": "Graph Valid Tree is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Graph Valid Tree",
+  "topic": "Graphs",
+  "topic_slug": "graphs"
+}

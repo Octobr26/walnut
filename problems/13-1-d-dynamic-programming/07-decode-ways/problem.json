@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/13-1-d-dynamic-programming/07-decode-ways",
+  "examples": [],
+  "hints": [],
+  "id": 105,
+  "leetcode": 91,
+  "leetcode_url": "https://leetcode.com/problems/decode-ways/",
+  "neetcode_url": "https://neetcode.io/problems/decode-ways",
+  "pattern": "1-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "numDecodings",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "decode-ways",
+  "statement": "Decode Ways is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Decode Ways",
+  "topic": "1-D Dynamic Programming",
+  "topic_slug": "1-d-dynamic-programming"
+}

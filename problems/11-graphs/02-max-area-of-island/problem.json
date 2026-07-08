@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/11-graphs/02-max-area-of-island",
+  "examples": [],
+  "hints": [],
+  "id": 81,
+  "leetcode": 695,
+  "leetcode_url": "https://leetcode.com/problems/max-area-of-island/",
+  "neetcode_url": "https://neetcode.io/problems/max-area-of-island",
+  "pattern": "Graphs",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "maxAreaOfIsland",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "max-area-of-island",
+  "statement": "Max Area of Island is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Max Area of Island",
+  "topic": "Graphs",
+  "topic_slug": "graphs"
+}

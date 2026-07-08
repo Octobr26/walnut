@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/07-trees/13-construct-binary-tree-from-preorder-and-inorder",
+  "examples": [],
+  "hints": [],
+  "id": 58,
+  "leetcode": 105,
+  "leetcode_url": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
+  "neetcode_url": "https://neetcode.io/problems/binary-tree-from-preorder-and-inorder-traversal",
+  "pattern": "Trees",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "buildTree",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "construct-binary-tree-from-preorder-and-inorder",
+  "statement": "Construct Binary Tree from Preorder and Inorder is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Construct Binary Tree From Preorder And Inorder Traversal",
+  "topic": "Trees",
+  "topic_slug": "trees"
+}

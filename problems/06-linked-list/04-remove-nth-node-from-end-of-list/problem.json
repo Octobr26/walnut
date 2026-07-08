@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/06-linked-list/04-remove-nth-node-from-end-of-list",
+  "examples": [],
+  "hints": [],
+  "id": 38,
+  "leetcode": 19,
+  "leetcode_url": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
+  "neetcode_url": "https://neetcode.io/problems/remove-node-from-end-of-linked-list",
+  "pattern": "Linked List",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "removeNthFromEnd",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "remove-nth-node-from-end-of-list",
+  "statement": "Remove Nth Node From End of List is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Remove Nth Node From End of List",
+  "topic": "Linked List",
+  "topic_slug": "linked-list"
+}

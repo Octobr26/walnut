@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/10-backtracking/05-combination-sum-ii",
+  "examples": [],
+  "hints": [],
+  "id": 75,
+  "leetcode": 40,
+  "leetcode_url": "https://leetcode.com/problems/combination-sum-ii/",
+  "neetcode_url": "https://neetcode.io/problems/combination-target-sum-ii",
+  "pattern": "Backtracking",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "combinationSum2",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "combination-sum-ii",
+  "statement": "Combination Sum II is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Combination Sum II",
+  "topic": "Backtracking",
+  "topic_slug": "backtracking"
+}

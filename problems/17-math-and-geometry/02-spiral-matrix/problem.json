@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/17-math-and-geometry/02-spiral-matrix",
+  "examples": [],
+  "hints": [],
+  "id": 137,
+  "leetcode": 54,
+  "leetcode_url": "https://leetcode.com/problems/spiral-matrix/",
+  "neetcode_url": "https://neetcode.io/problems/spiral-matrix",
+  "pattern": "Math & Geometry",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "spiralOrder",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "spiral-matrix",
+  "statement": "Spiral Matrix is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Spiral Matrix",
+  "topic": "Math & Geometry",
+  "topic_slug": "math-and-geometry"
+}

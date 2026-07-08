@@ -1,0 +1,116 @@
+{
+  "cases": [
+    {
+      "args": {
+        "nums": [
+          2,
+          7,
+          11,
+          15
+        ],
+        "target": 9
+      },
+      "expected": [
+        0,
+        1
+      ],
+      "kind": "example"
+    },
+    {
+      "args": {
+        "nums": [
+          3,
+          2,
+          4
+        ],
+        "target": 6
+      },
+      "expected": [
+        1,
+        2
+      ],
+      "kind": "example"
+    },
+    {
+      "args": {
+        "nums": [
+          3,
+          3
+        ],
+        "target": 6
+      },
+      "expected": [
+        0,
+        1
+      ],
+      "kind": "edge",
+      "note": "duplicate values"
+    },
+    {
+      "args": {
+        "nums": [
+          -3,
+          4,
+          3,
+          90
+        ],
+        "target": 0
+      },
+      "expected": [
+        0,
+        2
+      ],
+      "kind": "edge",
+      "note": "negatives sum to zero"
+    },
+    {
+      "gen": {
+        "fn": "make_case",
+        "seed": 1
+      },
+      "kind": "stress",
+      "note": "pair at the end",
+      "timeout_sec": 2
+    }
+  ],
+  "constraints": [
+    "2 <= nums.length <= 100000",
+    "Exactly one valid answer exists.",
+    "Return zero-based indices."
+  ],
+  "difficulty": "Easy",
+  "dir": "problems/01-arrays-and-hashing/03-two-sum",
+  "examples": [
+    {
+      "explanation": "nums[0] + nums[1] = 9.",
+      "input": "nums = [2,7,11,15], target = 9",
+      "output": "[0,1]"
+    },
+    {
+      "input": "nums = [3,2,4], target = 6",
+      "output": "[1,2]"
+    }
+  ],
+  "hints": [
+    "Brute force checks every pair.",
+    "Store values you have already passed.",
+    "Look up target - current before inserting current."
+  ],
+  "id": 3,
+  "leetcode": 1,
+  "leetcode_url": "https://leetcode.com/problems/two-sum/",
+  "neetcode_url": "https://neetcode.io/problems/two-integer-sum",
+  "pattern": "Hash map complement lookup",
+  "runner": {
+    "compare": "sorted",
+    "entry": "method",
+    "method": "twoSum",
+    "timeout_sec": 5
+  },
+  "seeded": true,
+  "slug": "two-sum",
+  "statement": "Given an array of integers nums and an integer target, return the indices of the two numbers that add up to target. Assume exactly one valid pair exists, and you may not reuse the same element.",
+  "title": "Two Sum",
+  "topic": "Arrays & Hashing",
+  "topic_slug": "arrays-and-hashing"
+}

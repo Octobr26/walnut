@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/05-binary-search/01-binary-search",
+  "examples": [],
+  "hints": [],
+  "id": 28,
+  "leetcode": 704,
+  "leetcode_url": "https://leetcode.com/problems/binary-search/",
+  "neetcode_url": "https://neetcode.io/problems/binary-search",
+  "pattern": "Binary Search",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "search",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "binary-search",
+  "statement": "Binary Search is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Binary Search",
+  "topic": "Binary Search",
+  "topic_slug": "binary-search"
+}

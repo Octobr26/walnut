@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/17-math-and-geometry/03-set-matrix-zeroes",
+  "examples": [],
+  "hints": [],
+  "id": 138,
+  "leetcode": 73,
+  "leetcode_url": "https://leetcode.com/problems/set-matrix-zeroes/",
+  "neetcode_url": "https://neetcode.io/problems/set-zeroes-in-matrix",
+  "pattern": "Math & Geometry",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "setZeroes",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "set-matrix-zeroes",
+  "statement": "Set Matrix Zeroes is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Set Matrix Zeroes",
+  "topic": "Math & Geometry",
+  "topic_slug": "math-and-geometry"
+}

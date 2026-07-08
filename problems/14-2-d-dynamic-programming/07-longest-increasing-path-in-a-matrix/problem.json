@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Hard",
+  "dir": "problems/14-2-d-dynamic-programming/07-longest-increasing-path-in-a-matrix",
+  "examples": [],
+  "hints": [],
+  "id": 117,
+  "leetcode": 329,
+  "leetcode_url": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
+  "neetcode_url": "https://neetcode.io/problems/longest-increasing-path-in-matrix",
+  "pattern": "2-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "longestIncreasingPath",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "longest-increasing-path-in-a-matrix",
+  "statement": "Longest Increasing Path in a Matrix is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Longest Increasing Path In a Matrix",
+  "topic": "2-D Dynamic Programming",
+  "topic_slug": "2-d-dynamic-programming"
+}

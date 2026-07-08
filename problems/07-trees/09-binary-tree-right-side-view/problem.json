@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/07-trees/09-binary-tree-right-side-view",
+  "examples": [],
+  "hints": [],
+  "id": 54,
+  "leetcode": 199,
+  "leetcode_url": "https://leetcode.com/problems/binary-tree-right-side-view/",
+  "neetcode_url": "https://neetcode.io/problems/binary-tree-right-side-view",
+  "pattern": "Trees",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "rightSideView",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "binary-tree-right-side-view",
+  "statement": "Binary Tree Right Side View is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Binary Tree Right Side View",
+  "topic": "Trees",
+  "topic_slug": "trees"
+}

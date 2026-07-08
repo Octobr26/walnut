@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/06-linked-list/01-reverse-linked-list",
+  "examples": [],
+  "hints": [],
+  "id": 35,
+  "leetcode": 206,
+  "leetcode_url": "https://leetcode.com/problems/reverse-linked-list/",
+  "neetcode_url": "https://neetcode.io/problems/reverse-a-linked-list",
+  "pattern": "Linked List",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "reverseList",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "reverse-linked-list",
+  "statement": "Reverse Linked List is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Reverse Linked List",
+  "topic": "Linked List",
+  "topic_slug": "linked-list"
+}

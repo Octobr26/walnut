@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Hard",
+  "dir": "problems/14-2-d-dynamic-programming/08-distinct-subsequences",
+  "examples": [],
+  "hints": [],
+  "id": 118,
+  "leetcode": 115,
+  "leetcode_url": "https://leetcode.com/problems/distinct-subsequences/",
+  "neetcode_url": "https://neetcode.io/problems/count-subsequences",
+  "pattern": "2-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "numDistinct",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "distinct-subsequences",
+  "statement": "Distinct Subsequences is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Distinct Subsequences",
+  "topic": "2-D Dynamic Programming",
+  "topic_slug": "2-d-dynamic-programming"
+}

@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/06-linked-list/05-copy-list-with-random-pointer",
+  "examples": [],
+  "hints": [],
+  "id": 39,
+  "leetcode": 138,
+  "leetcode_url": "https://leetcode.com/problems/copy-list-with-random-pointer/",
+  "neetcode_url": "https://neetcode.io/problems/copy-linked-list-with-random-pointer",
+  "pattern": "Linked List",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "copyRandomList",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "copy-list-with-random-pointer",
+  "statement": "Copy List With Random Pointer is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Copy List With Random Pointer",
+  "topic": "Linked List",
+  "topic_slug": "linked-list"
+}

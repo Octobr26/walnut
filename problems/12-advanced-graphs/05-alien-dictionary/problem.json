@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Hard",
+  "dir": "problems/12-advanced-graphs/05-alien-dictionary",
+  "examples": [],
+  "hints": [],
+  "id": 97,
+  "leetcode": 269,
+  "leetcode_url": "https://leetcode.com/problems/alien-dictionary/",
+  "neetcode_url": "https://neetcode.io/problems/foreign-dictionary",
+  "pattern": "Advanced Graphs",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "foreignDictionary",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "alien-dictionary",
+  "statement": "Alien Dictionary is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Alien Dictionary",
+  "topic": "Advanced Graphs",
+  "topic_slug": "advanced-graphs"
+}

@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/06-linked-list/09-lru-cache",
+  "examples": [],
+  "hints": [],
+  "id": 43,
+  "leetcode": 146,
+  "leetcode_url": "https://leetcode.com/problems/lru-cache/",
+  "neetcode_url": "https://neetcode.io/problems/lru-cache",
+  "pattern": "Linked List",
+  "runner": {
+    "class": "LRUCache",
+    "compare": "exact",
+    "entry": "design",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "lru-cache",
+  "statement": "LRU Cache is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "LRU Cache",
+  "topic": "Linked List",
+  "topic_slug": "linked-list"
+}

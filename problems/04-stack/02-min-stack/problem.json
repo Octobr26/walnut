@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/04-stack/02-min-stack",
+  "examples": [],
+  "hints": [],
+  "id": 22,
+  "leetcode": 155,
+  "leetcode_url": "https://leetcode.com/problems/min-stack/",
+  "neetcode_url": "https://neetcode.io/problems/minimum-stack",
+  "pattern": "Stack",
+  "runner": {
+    "class": "MinStack",
+    "compare": "exact",
+    "entry": "design",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "min-stack",
+  "statement": "Min Stack is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Min Stack",
+  "topic": "Stack",
+  "topic_slug": "stack"
+}

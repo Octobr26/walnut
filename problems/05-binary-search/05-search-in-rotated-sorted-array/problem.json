@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/05-binary-search/05-search-in-rotated-sorted-array",
+  "examples": [],
+  "hints": [],
+  "id": 32,
+  "leetcode": 33,
+  "leetcode_url": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+  "neetcode_url": "https://neetcode.io/problems/find-target-in-rotated-sorted-array",
+  "pattern": "Binary Search",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "search",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "search-in-rotated-sorted-array",
+  "statement": "Search in Rotated Sorted Array is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Search In Rotated Sorted Array",
+  "topic": "Binary Search",
+  "topic_slug": "binary-search"
+}

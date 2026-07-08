@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/11-graphs/03-clone-graph",
+  "examples": [],
+  "hints": [],
+  "id": 82,
+  "leetcode": 133,
+  "leetcode_url": "https://leetcode.com/problems/clone-graph/",
+  "neetcode_url": "https://neetcode.io/problems/clone-graph",
+  "pattern": "Graphs",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "cloneGraph",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "clone-graph",
+  "statement": "Clone Graph is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Clone Graph",
+  "topic": "Graphs",
+  "topic_slug": "graphs"
+}

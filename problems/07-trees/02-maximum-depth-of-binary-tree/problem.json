@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/07-trees/02-maximum-depth-of-binary-tree",
+  "examples": [],
+  "hints": [],
+  "id": 47,
+  "leetcode": 104,
+  "leetcode_url": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+  "neetcode_url": "https://neetcode.io/problems/depth-of-binary-tree",
+  "pattern": "Trees",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "maxDepth",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "maximum-depth-of-binary-tree",
+  "statement": "Maximum Depth of Binary Tree is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Maximum Depth of Binary Tree",
+  "topic": "Trees",
+  "topic_slug": "trees"
+}

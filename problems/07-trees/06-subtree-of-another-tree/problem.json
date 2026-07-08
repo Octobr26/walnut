@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/07-trees/06-subtree-of-another-tree",
+  "examples": [],
+  "hints": [],
+  "id": 51,
+  "leetcode": 572,
+  "leetcode_url": "https://leetcode.com/problems/subtree-of-another-tree/",
+  "neetcode_url": "https://neetcode.io/problems/subtree-of-a-binary-tree",
+  "pattern": "Trees",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "isSubtree",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "subtree-of-another-tree",
+  "statement": "Subtree of Another Tree is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Subtree of Another Tree",
+  "topic": "Trees",
+  "topic_slug": "trees"
+}

@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Hard",
+  "dir": "problems/14-2-d-dynamic-programming/10-burst-balloons",
+  "examples": [],
+  "hints": [],
+  "id": 120,
+  "leetcode": 312,
+  "leetcode_url": "https://leetcode.com/problems/burst-balloons/",
+  "neetcode_url": "https://neetcode.io/problems/burst-balloons",
+  "pattern": "2-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "maxCoins",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "burst-balloons",
+  "statement": "Burst Balloons is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Burst Balloons",
+  "topic": "2-D Dynamic Programming",
+  "topic_slug": "2-d-dynamic-programming"
+}

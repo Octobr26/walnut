@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/10-backtracking/08-letter-combinations-of-a-phone-number",
+  "examples": [],
+  "hints": [],
+  "id": 78,
+  "leetcode": 17,
+  "leetcode_url": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+  "neetcode_url": "https://neetcode.io/problems/combinations-of-a-phone-number",
+  "pattern": "Backtracking",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "letterCombinations",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "letter-combinations-of-a-phone-number",
+  "statement": "Letter Combinations of a Phone Number is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Letter Combinations of a Phone Number",
+  "topic": "Backtracking",
+  "topic_slug": "backtracking"
+}

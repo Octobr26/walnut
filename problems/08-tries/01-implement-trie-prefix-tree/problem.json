@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/08-tries/01-implement-trie-prefix-tree",
+  "examples": [],
+  "hints": [],
+  "id": 61,
+  "leetcode": 208,
+  "leetcode_url": "https://leetcode.com/problems/implement-trie-prefix-tree/",
+  "neetcode_url": "https://neetcode.io/problems/implement-prefix-tree",
+  "pattern": "Tries",
+  "runner": {
+    "class": "Trie",
+    "compare": "exact",
+    "entry": "design",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "implement-trie-prefix-tree",
+  "statement": "Implement Trie (Prefix Tree) is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Implement Trie Prefix Tree",
+  "topic": "Tries",
+  "topic_slug": "tries"
+}

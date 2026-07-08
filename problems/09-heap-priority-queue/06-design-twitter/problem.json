@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/09-heap-priority-queue/06-design-twitter",
+  "examples": [],
+  "hints": [],
+  "id": 69,
+  "leetcode": 355,
+  "leetcode_url": "https://leetcode.com/problems/design-twitter/",
+  "neetcode_url": "https://neetcode.io/problems/design-twitter-feed",
+  "pattern": "Heap / Priority Queue",
+  "runner": {
+    "class": "Twitter",
+    "compare": "exact",
+    "entry": "design",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "design-twitter",
+  "statement": "Design Twitter is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Design Twitter",
+  "topic": "Heap / Priority Queue",
+  "topic_slug": "heap-priority-queue"
+}

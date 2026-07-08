@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/13-1-d-dynamic-programming/11-longest-increasing-subsequence",
+  "examples": [],
+  "hints": [],
+  "id": 109,
+  "leetcode": 300,
+  "leetcode_url": "https://leetcode.com/problems/longest-increasing-subsequence/",
+  "neetcode_url": "https://neetcode.io/problems/longest-increasing-subsequence",
+  "pattern": "1-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "lengthOfLIS",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "longest-increasing-subsequence",
+  "statement": "Longest Increasing Subsequence is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Longest Increasing Subsequence",
+  "topic": "1-D Dynamic Programming",
+  "topic_slug": "1-d-dynamic-programming"
+}

@@ -1,0 +1,24 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "examples": [],
+  "hints": [],
+  "id": 0,
+  "leetcode": 0,
+  "leetcode_url": "",
+  "neetcode_url": null,
+  "pattern": "",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "solve",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "new-problem",
+  "statement": "",
+  "title": "New Problem",
+  "topic": "Topic",
+  "topic_slug": "topic"
+}

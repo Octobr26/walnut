@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/11-graphs/08-course-schedule",
+  "examples": [],
+  "hints": [],
+  "id": 87,
+  "leetcode": 207,
+  "leetcode_url": "https://leetcode.com/problems/course-schedule/",
+  "neetcode_url": "https://neetcode.io/problems/course-schedule",
+  "pattern": "Graphs",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "canFinish",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "course-schedule",
+  "statement": "Course Schedule is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Course Schedule",
+  "topic": "Graphs",
+  "topic_slug": "graphs"
+}

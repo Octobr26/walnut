@@ -1,0 +1,92 @@
+{
+  "cases": [
+    {
+      "args": {
+        "numbers": [
+          2,
+          7,
+          11,
+          15
+        ],
+        "target": 9
+      },
+      "expected": [
+        1,
+        2
+      ],
+      "kind": "example"
+    },
+    {
+      "args": {
+        "numbers": [
+          2,
+          3,
+          4
+        ],
+        "target": 6
+      },
+      "expected": [
+        1,
+        3
+      ],
+      "kind": "edge"
+    },
+    {
+      "args": {
+        "numbers": [
+          -1,
+          0
+        ],
+        "target": -1
+      },
+      "expected": [
+        1,
+        2
+      ],
+      "kind": "edge"
+    },
+    {
+      "gen": {
+        "fn": "make_case",
+        "seed": 1
+      },
+      "kind": "stress",
+      "timeout_sec": 5
+    }
+  ],
+  "constraints": [
+    "The input is sorted in nondecreasing order.",
+    "Exactly one valid answer exists.",
+    "Return one-based indices."
+  ],
+  "difficulty": "Medium",
+  "dir": "problems/02-two-pointers/02-two-sum-ii",
+  "examples": [
+    {
+      "input": "numbers = [2,7,11,15], target = 9",
+      "output": "[1,2]"
+    }
+  ],
+  "hints": [
+    "Use the sorted order.",
+    "If the sum is too small, move the left pointer right.",
+    "If the sum is too large, move the right pointer left."
+  ],
+  "id": 11,
+  "leetcode": 167,
+  "leetcode_url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
+  "neetcode_url": "https://neetcode.io/problems/two-integer-sum-ii",
+  "pattern": "Two pointers on sorted input",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "twoSum",
+    "timeout_sec": 5
+  },
+  "seeded": true,
+  "slug": "two-sum-ii",
+  "statement": "Given a sorted list of integers and a target, return the one-based positions of the two values that add to the target.",
+  "title": "Two Sum II Input Array Is Sorted",
+  "topic": "Two Pointers",
+  "topic_slug": "two-pointers"
+}

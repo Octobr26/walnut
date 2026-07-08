@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/07-trees/07-lowest-common-ancestor-of-a-bst",
+  "examples": [],
+  "hints": [],
+  "id": 52,
+  "leetcode": 235,
+  "leetcode_url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
+  "neetcode_url": "https://neetcode.io/problems/lowest-common-ancestor-in-binary-search-tree",
+  "pattern": "Trees",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "lowestCommonAncestor",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "lowest-common-ancestor-of-a-bst",
+  "statement": "Lowest Common Ancestor of a BST is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Lowest Common Ancestor of a Binary Search Tree",
+  "topic": "Trees",
+  "topic_slug": "trees"
+}

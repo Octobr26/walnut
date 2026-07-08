@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/10-backtracking/01-subsets",
+  "examples": [],
+  "hints": [],
+  "id": 71,
+  "leetcode": 78,
+  "leetcode_url": "https://leetcode.com/problems/subsets/",
+  "neetcode_url": "https://neetcode.io/problems/subsets",
+  "pattern": "Backtracking",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "subsets",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "subsets",
+  "statement": "Subsets is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Subsets",
+  "topic": "Backtracking",
+  "topic_slug": "backtracking"
+}

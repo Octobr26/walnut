@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/09-heap-priority-queue/04-kth-largest-element-in-an-array",
+  "examples": [],
+  "hints": [],
+  "id": 67,
+  "leetcode": 215,
+  "leetcode_url": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+  "neetcode_url": "https://neetcode.io/problems/kth-largest-element-in-an-array",
+  "pattern": "Heap / Priority Queue",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "findKthLargest",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "kth-largest-element-in-an-array",
+  "statement": "Kth Largest Element in an Array is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Kth Largest Element In An Array",
+  "topic": "Heap / Priority Queue",
+  "topic_slug": "heap-priority-queue"
+}

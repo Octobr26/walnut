@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/14-2-d-dynamic-programming/04-coin-change-ii",
+  "examples": [],
+  "hints": [],
+  "id": 114,
+  "leetcode": 518,
+  "leetcode_url": "https://leetcode.com/problems/coin-change-ii/",
+  "neetcode_url": "https://neetcode.io/problems/coin-change-ii",
+  "pattern": "2-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "change",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "coin-change-ii",
+  "statement": "Coin Change II is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Coin Change II",
+  "topic": "2-D Dynamic Programming",
+  "topic_slug": "2-d-dynamic-programming"
+}

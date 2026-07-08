@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/07-trees/03-diameter-of-binary-tree",
+  "examples": [],
+  "hints": [],
+  "id": 48,
+  "leetcode": 543,
+  "leetcode_url": "https://leetcode.com/problems/diameter-of-binary-tree/",
+  "neetcode_url": "https://neetcode.io/problems/binary-tree-diameter",
+  "pattern": "Trees",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "diameterOfBinaryTree",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "diameter-of-binary-tree",
+  "statement": "Diameter of Binary Tree is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Diameter of Binary Tree",
+  "topic": "Trees",
+  "topic_slug": "trees"
+}

@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/15-greedy/07-partition-labels",
+  "examples": [],
+  "hints": [],
+  "id": 128,
+  "leetcode": 763,
+  "leetcode_url": "https://leetcode.com/problems/partition-labels/",
+  "neetcode_url": "https://neetcode.io/problems/partition-labels",
+  "pattern": "Greedy",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "partitionLabels",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "partition-labels",
+  "statement": "Partition Labels is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Partition Labels",
+  "topic": "Greedy",
+  "topic_slug": "greedy"
+}

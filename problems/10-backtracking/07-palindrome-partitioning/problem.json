@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/10-backtracking/07-palindrome-partitioning",
+  "examples": [],
+  "hints": [],
+  "id": 77,
+  "leetcode": 131,
+  "leetcode_url": "https://leetcode.com/problems/palindrome-partitioning/",
+  "neetcode_url": "https://neetcode.io/problems/palindrome-partitioning",
+  "pattern": "Backtracking",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "partition",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "palindrome-partitioning",
+  "statement": "Palindrome Partitioning is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Palindrome Partitioning",
+  "topic": "Backtracking",
+  "topic_slug": "backtracking"
+}

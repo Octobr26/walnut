@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/03-sliding-window/03-longest-repeating-character-replacement",
+  "examples": [],
+  "hints": [],
+  "id": 17,
+  "leetcode": 424,
+  "leetcode_url": "https://leetcode.com/problems/longest-repeating-character-replacement/",
+  "neetcode_url": "https://neetcode.io/problems/longest-repeating-substring-with-replacement",
+  "pattern": "Sliding Window",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "characterReplacement",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "longest-repeating-character-replacement",
+  "statement": "Longest Repeating Character Replacement is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Longest Repeating Character Replacement",
+  "topic": "Sliding Window",
+  "topic_slug": "sliding-window"
+}

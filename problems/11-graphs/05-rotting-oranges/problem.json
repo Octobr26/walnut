@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/11-graphs/05-rotting-oranges",
+  "examples": [],
+  "hints": [],
+  "id": 84,
+  "leetcode": 994,
+  "leetcode_url": "https://leetcode.com/problems/rotting-oranges/",
+  "neetcode_url": "https://neetcode.io/problems/rotting-fruit",
+  "pattern": "Graphs",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "orangesRotting",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "rotting-oranges",
+  "statement": "Rotting Oranges is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Rotting Oranges",
+  "topic": "Graphs",
+  "topic_slug": "graphs"
+}

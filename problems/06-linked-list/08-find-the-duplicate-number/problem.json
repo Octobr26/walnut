@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/06-linked-list/08-find-the-duplicate-number",
+  "examples": [],
+  "hints": [],
+  "id": 42,
+  "leetcode": 287,
+  "leetcode_url": "https://leetcode.com/problems/find-the-duplicate-number/",
+  "neetcode_url": "https://neetcode.io/problems/find-duplicate-integer",
+  "pattern": "Linked List",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "findDuplicate",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "find-the-duplicate-number",
+  "statement": "Find the Duplicate Number is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Find The Duplicate Number",
+  "topic": "Linked List",
+  "topic_slug": "linked-list"
+}

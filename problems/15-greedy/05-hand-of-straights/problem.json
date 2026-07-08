@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/15-greedy/05-hand-of-straights",
+  "examples": [],
+  "hints": [],
+  "id": 126,
+  "leetcode": 846,
+  "leetcode_url": "https://leetcode.com/problems/hand-of-straights/",
+  "neetcode_url": "https://neetcode.io/problems/hand-of-straights",
+  "pattern": "Greedy",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "isNStraightHand",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "hand-of-straights",
+  "statement": "Hand of Straights is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Hand of Straights",
+  "topic": "Greedy",
+  "topic_slug": "greedy"
+}

@@ -1,0 +1,99 @@
+{
+  "cases": [
+    {
+      "args": {
+        "strs": [
+          "eat",
+          "tea",
+          "tan",
+          "ate",
+          "nat",
+          "bat"
+        ]
+      },
+      "expected": [
+        [
+          "eat",
+          "tea",
+          "ate"
+        ],
+        [
+          "tan",
+          "nat"
+        ],
+        [
+          "bat"
+        ]
+      ],
+      "kind": "example"
+    },
+    {
+      "args": {
+        "strs": [
+          ""
+        ]
+      },
+      "expected": [
+        [
+          ""
+        ]
+      ],
+      "kind": "edge"
+    },
+    {
+      "args": {
+        "strs": [
+          "a"
+        ]
+      },
+      "expected": [
+        [
+          "a"
+        ]
+      ],
+      "kind": "edge"
+    },
+    {
+      "gen": {
+        "fn": "make_case",
+        "seed": 1
+      },
+      "kind": "stress",
+      "timeout_sec": 5
+    }
+  ],
+  "constraints": [
+    "Strings may be empty.",
+    "A sorted word or character-count tuple can identify each group."
+  ],
+  "difficulty": "Medium",
+  "dir": "problems/01-arrays-and-hashing/04-group-anagrams",
+  "examples": [
+    {
+      "input": "strs = [\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\"]",
+      "output": "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]"
+    }
+  ],
+  "hints": [
+    "Anagrams share the same letters.",
+    "Turn each word into a canonical key.",
+    "Append the original word to the bucket for that key."
+  ],
+  "id": 4,
+  "leetcode": 49,
+  "leetcode_url": "https://leetcode.com/problems/group-anagrams/",
+  "neetcode_url": "https://neetcode.io/problems/anagram-groups",
+  "pattern": "Group by normalized key",
+  "runner": {
+    "compare": "groups",
+    "entry": "method",
+    "method": "groupAnagrams",
+    "timeout_sec": 5
+  },
+  "seeded": true,
+  "slug": "group-anagrams",
+  "statement": "Given a list of strings, group together words that are anagrams of one another. The order of groups and words inside each group does not matter.",
+  "title": "Group Anagrams",
+  "topic": "Arrays & Hashing",
+  "topic_slug": "arrays-and-hashing"
+}

@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/07-trees/04-balanced-binary-tree",
+  "examples": [],
+  "hints": [],
+  "id": 49,
+  "leetcode": 110,
+  "leetcode_url": "https://leetcode.com/problems/balanced-binary-tree/",
+  "neetcode_url": "https://neetcode.io/problems/balanced-binary-tree",
+  "pattern": "Trees",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "isBalanced",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "balanced-binary-tree",
+  "statement": "Balanced Binary Tree is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Balanced Binary Tree",
+  "topic": "Trees",
+  "topic_slug": "trees"
+}

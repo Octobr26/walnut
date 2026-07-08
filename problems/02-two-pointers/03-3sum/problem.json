@@ -1,0 +1,117 @@
+{
+  "cases": [
+    {
+      "args": {
+        "nums": [
+          -1,
+          0,
+          1,
+          2,
+          -1,
+          -4
+        ]
+      },
+      "expected": [
+        [
+          -1,
+          -1,
+          2
+        ],
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "kind": "example"
+    },
+    {
+      "args": {
+        "nums": [
+          0,
+          1,
+          1
+        ]
+      },
+      "expected": [],
+      "kind": "edge"
+    },
+    {
+      "args": {
+        "nums": [
+          0,
+          0,
+          0
+        ]
+      },
+      "expected": [
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "kind": "edge"
+    },
+    {
+      "args": {
+        "nums": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "expected": [
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "kind": "edge"
+    },
+    {
+      "gen": {
+        "fn": "make_case",
+        "seed": 1
+      },
+      "kind": "stress",
+      "timeout_sec": 8
+    }
+  ],
+  "constraints": [
+    "The answer must not contain duplicate triplets.",
+    "Sorting lets the inner search use two pointers."
+  ],
+  "difficulty": "Medium",
+  "dir": "problems/02-two-pointers/03-3sum",
+  "examples": [
+    {
+      "input": "nums = [-1,0,1,2,-1,-4]",
+      "output": "[[-1,-1,2],[-1,0,1]]"
+    }
+  ],
+  "hints": [
+    "Sort the numbers first.",
+    "Fix one value and use two pointers for the remaining sum.",
+    "Skip duplicate fixed values and duplicate pointer values."
+  ],
+  "id": 12,
+  "leetcode": 15,
+  "leetcode_url": "https://leetcode.com/problems/3sum/",
+  "neetcode_url": "https://neetcode.io/problems/three-integer-sum",
+  "pattern": "Sorted scan with duplicate skipping",
+  "runner": {
+    "compare": "groups",
+    "entry": "method",
+    "method": "threeSum",
+    "timeout_sec": 8
+  },
+  "seeded": true,
+  "slug": "3sum",
+  "statement": "Return every unique triplet of numbers that sums to zero. Each triplet may be in any order, and the list of triplets may be in any order.",
+  "title": "3Sum",
+  "topic": "Two Pointers",
+  "topic_slug": "two-pointers"
+}

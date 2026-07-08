@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/07-trees/05-same-tree",
+  "examples": [],
+  "hints": [],
+  "id": 50,
+  "leetcode": 100,
+  "leetcode_url": "https://leetcode.com/problems/same-tree/",
+  "neetcode_url": "https://neetcode.io/problems/same-binary-tree",
+  "pattern": "Trees",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "isSameTree",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "same-tree",
+  "statement": "Same Tree is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Same Tree",
+  "topic": "Trees",
+  "topic_slug": "trees"
+}

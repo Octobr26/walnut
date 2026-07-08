@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/17-math-and-geometry/05-plus-one",
+  "examples": [],
+  "hints": [],
+  "id": 140,
+  "leetcode": 66,
+  "leetcode_url": "https://leetcode.com/problems/plus-one/",
+  "neetcode_url": "https://neetcode.io/problems/plus-one",
+  "pattern": "Math & Geometry",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "plusOne",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "plus-one",
+  "statement": "Plus One is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Plus One",
+  "topic": "Math & Geometry",
+  "topic_slug": "math-and-geometry"
+}

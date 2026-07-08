@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Hard",
+  "dir": "problems/10-backtracking/09-n-queens",
+  "examples": [],
+  "hints": [],
+  "id": 79,
+  "leetcode": 51,
+  "leetcode_url": "https://leetcode.com/problems/n-queens/",
+  "neetcode_url": "https://neetcode.io/problems/n-queens",
+  "pattern": "Backtracking",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "solveNQueens",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "n-queens",
+  "statement": "N-Queens is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "N Queens",
+  "topic": "Backtracking",
+  "topic_slug": "backtracking"
+}

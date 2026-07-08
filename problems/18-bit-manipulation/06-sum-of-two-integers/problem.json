@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/18-bit-manipulation/06-sum-of-two-integers",
+  "examples": [],
+  "hints": [],
+  "id": 149,
+  "leetcode": 371,
+  "leetcode_url": "https://leetcode.com/problems/sum-of-two-integers/",
+  "neetcode_url": "https://neetcode.io/problems/sum-of-two-integers",
+  "pattern": "Bit Manipulation",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "getSum",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "sum-of-two-integers",
+  "statement": "Sum of Two Integers is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Sum of Two Integers",
+  "topic": "Bit Manipulation",
+  "topic_slug": "bit-manipulation"
+}

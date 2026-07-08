@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/14-2-d-dynamic-programming/02-longest-common-subsequence",
+  "examples": [],
+  "hints": [],
+  "id": 112,
+  "leetcode": 1143,
+  "leetcode_url": "https://leetcode.com/problems/longest-common-subsequence/",
+  "neetcode_url": "https://neetcode.io/problems/longest-common-subsequence",
+  "pattern": "2-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "longestCommonSubsequence",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "longest-common-subsequence",
+  "statement": "Longest Common Subsequence is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Longest Common Subsequence",
+  "topic": "2-D Dynamic Programming",
+  "topic_slug": "2-d-dynamic-programming"
+}

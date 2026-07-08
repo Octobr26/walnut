@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Hard",
+  "dir": "problems/07-trees/14-binary-tree-maximum-path-sum",
+  "examples": [],
+  "hints": [],
+  "id": 59,
+  "leetcode": 124,
+  "leetcode_url": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+  "neetcode_url": "https://neetcode.io/problems/binary-tree-maximum-path-sum",
+  "pattern": "Trees",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "maxPathSum",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "binary-tree-maximum-path-sum",
+  "statement": "Binary Tree Maximum Path Sum is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Binary Tree Maximum Path Sum",
+  "topic": "Trees",
+  "topic_slug": "trees"
+}

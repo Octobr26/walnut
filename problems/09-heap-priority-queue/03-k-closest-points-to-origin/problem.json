@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/09-heap-priority-queue/03-k-closest-points-to-origin",
+  "examples": [],
+  "hints": [],
+  "id": 66,
+  "leetcode": 973,
+  "leetcode_url": "https://leetcode.com/problems/k-closest-points-to-origin/",
+  "neetcode_url": "https://neetcode.io/problems/k-closest-points-to-origin",
+  "pattern": "Heap / Priority Queue",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "kClosest",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "k-closest-points-to-origin",
+  "statement": "K Closest Points to Origin is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "K Closest Points to Origin",
+  "topic": "Heap / Priority Queue",
+  "topic_slug": "heap-priority-queue"
+}

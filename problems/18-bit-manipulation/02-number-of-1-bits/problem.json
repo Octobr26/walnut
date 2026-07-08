@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/18-bit-manipulation/02-number-of-1-bits",
+  "examples": [],
+  "hints": [],
+  "id": 145,
+  "leetcode": 191,
+  "leetcode_url": "https://leetcode.com/problems/number-of-1-bits/",
+  "neetcode_url": "https://neetcode.io/problems/number-of-one-bits",
+  "pattern": "Bit Manipulation",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "hammingWeight",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "number-of-1-bits",
+  "statement": "Number of 1 Bits is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Number of 1 Bits",
+  "topic": "Bit Manipulation",
+  "topic_slug": "bit-manipulation"
+}

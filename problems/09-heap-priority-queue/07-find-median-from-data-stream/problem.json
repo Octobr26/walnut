@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Hard",
+  "dir": "problems/09-heap-priority-queue/07-find-median-from-data-stream",
+  "examples": [],
+  "hints": [],
+  "id": 70,
+  "leetcode": 295,
+  "leetcode_url": "https://leetcode.com/problems/find-median-from-data-stream/",
+  "neetcode_url": "https://neetcode.io/problems/find-median-in-a-data-stream",
+  "pattern": "Heap / Priority Queue",
+  "runner": {
+    "class": "MedianFinder",
+    "compare": "exact",
+    "entry": "design",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "find-median-from-data-stream",
+  "statement": "Find Median From Data Stream is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Find Median From Data Stream",
+  "topic": "Heap / Priority Queue",
+  "topic_slug": "heap-priority-queue"
+}

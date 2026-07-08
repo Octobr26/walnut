@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/11-graphs/11-number-of-connected-components-in-an-undirected-graph",
+  "examples": [],
+  "hints": [],
+  "id": 90,
+  "leetcode": 323,
+  "leetcode_url": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/",
+  "neetcode_url": "https://neetcode.io/problems/count-connected-components",
+  "pattern": "Graphs",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "countComponents",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "number-of-connected-components-in-an-undirected-graph",
+  "statement": "Number of Connected Components in an Undirected Graph is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Number of Connected Components In An Undirected Graph",
+  "topic": "Graphs",
+  "topic_slug": "graphs"
+}

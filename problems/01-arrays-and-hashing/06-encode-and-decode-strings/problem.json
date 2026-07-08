@@ -1,0 +1,84 @@
+{
+  "cases": [
+    {
+      "args": {
+        "strs": [
+          "neet",
+          "co#de",
+          ""
+        ]
+      },
+      "expected": [
+        "neet",
+        "co#de",
+        ""
+      ],
+      "kind": "example"
+    },
+    {
+      "args": {
+        "strs": []
+      },
+      "expected": [],
+      "kind": "edge"
+    },
+    {
+      "args": {
+        "strs": [
+          "#",
+          "12#abc",
+          ""
+        ]
+      },
+      "expected": [
+        "#",
+        "12#abc",
+        ""
+      ],
+      "kind": "edge"
+    },
+    {
+      "gen": {
+        "fn": "make_case",
+        "seed": 1
+      },
+      "kind": "stress",
+      "timeout_sec": 5
+    }
+  ],
+  "constraints": [
+    "Strings may contain punctuation or digits.",
+    "The encoded format must be unambiguous."
+  ],
+  "difficulty": "Medium",
+  "dir": "problems/01-arrays-and-hashing/06-encode-and-decode-strings",
+  "examples": [
+    {
+      "input": "strs = [\"neet\",\"co#de\",\"\"]",
+      "output": "[\"neet\",\"co#de\",\"\"]"
+    }
+  ],
+  "hints": [
+    "Joining on a delimiter breaks when the delimiter appears in data.",
+    "Store each string length before its contents.",
+    "During decode, read the length, skip the separator, then slice that many characters."
+  ],
+  "id": 6,
+  "leetcode": 271,
+  "leetcode_url": "https://leetcode.com/problems/encode-and-decode-strings/",
+  "neetcode_url": "https://neetcode.io/problems/string-encode-and-decode",
+  "pattern": "Length-prefixed serialization",
+  "runner": {
+    "compare": "exact",
+    "decode": "decode",
+    "encode": "encode",
+    "entry": "roundtrip",
+    "timeout_sec": 5
+  },
+  "seeded": true,
+  "slug": "encode-and-decode-strings",
+  "statement": "Design a pair of methods that turns a list of strings into one string and back again, preserving empty strings and delimiter characters.",
+  "title": "Encode and Decode Strings",
+  "topic": "Arrays & Hashing",
+  "topic_slug": "arrays-and-hashing"
+}

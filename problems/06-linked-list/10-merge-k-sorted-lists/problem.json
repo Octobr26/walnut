@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Hard",
+  "dir": "problems/06-linked-list/10-merge-k-sorted-lists",
+  "examples": [],
+  "hints": [],
+  "id": 44,
+  "leetcode": 23,
+  "leetcode_url": "https://leetcode.com/problems/merge-k-sorted-lists/",
+  "neetcode_url": "https://neetcode.io/problems/merge-k-sorted-linked-lists",
+  "pattern": "Linked List",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "mergeKLists",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "merge-k-sorted-lists",
+  "statement": "Merge K Sorted Lists is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Merge K Sorted Lists",
+  "topic": "Linked List",
+  "topic_slug": "linked-list"
+}

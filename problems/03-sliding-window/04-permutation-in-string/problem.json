@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/03-sliding-window/04-permutation-in-string",
+  "examples": [],
+  "hints": [],
+  "id": 18,
+  "leetcode": 567,
+  "leetcode_url": "https://leetcode.com/problems/permutation-in-string/",
+  "neetcode_url": "https://neetcode.io/problems/permutation-string",
+  "pattern": "Sliding Window",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "checkInclusion",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "permutation-in-string",
+  "statement": "Permutation in String is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Permutation In String",
+  "topic": "Sliding Window",
+  "topic_slug": "sliding-window"
+}

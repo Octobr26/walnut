@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/04-stack/05-daily-temperatures",
+  "examples": [],
+  "hints": [],
+  "id": 25,
+  "leetcode": 739,
+  "leetcode_url": "https://leetcode.com/problems/daily-temperatures/",
+  "neetcode_url": "https://neetcode.io/problems/daily-temperatures",
+  "pattern": "Stack",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "dailyTemperatures",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "daily-temperatures",
+  "statement": "Daily Temperatures is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Daily Temperatures",
+  "topic": "Stack",
+  "topic_slug": "stack"
+}

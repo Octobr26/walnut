@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/18-bit-manipulation/03-counting-bits",
+  "examples": [],
+  "hints": [],
+  "id": 146,
+  "leetcode": 338,
+  "leetcode_url": "https://leetcode.com/problems/counting-bits/",
+  "neetcode_url": "https://neetcode.io/problems/counting-bits",
+  "pattern": "Bit Manipulation",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "countBits",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "counting-bits",
+  "statement": "Counting Bits is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Counting Bits",
+  "topic": "Bit Manipulation",
+  "topic_slug": "bit-manipulation"
+}

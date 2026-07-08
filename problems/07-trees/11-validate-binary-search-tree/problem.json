@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/07-trees/11-validate-binary-search-tree",
+  "examples": [],
+  "hints": [],
+  "id": 56,
+  "leetcode": 98,
+  "leetcode_url": "https://leetcode.com/problems/validate-binary-search-tree/",
+  "neetcode_url": "https://neetcode.io/problems/valid-binary-search-tree",
+  "pattern": "Trees",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "isValidBST",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "validate-binary-search-tree",
+  "statement": "Validate Binary Search Tree is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Validate Binary Search Tree",
+  "topic": "Trees",
+  "topic_slug": "trees"
+}

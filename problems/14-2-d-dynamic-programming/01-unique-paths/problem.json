@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/14-2-d-dynamic-programming/01-unique-paths",
+  "examples": [],
+  "hints": [],
+  "id": 111,
+  "leetcode": 62,
+  "leetcode_url": "https://leetcode.com/problems/unique-paths/",
+  "neetcode_url": "https://neetcode.io/problems/count-paths",
+  "pattern": "2-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "uniquePaths",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "unique-paths",
+  "statement": "Unique Paths is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Unique Paths",
+  "topic": "2-D Dynamic Programming",
+  "topic_slug": "2-d-dynamic-programming"
+}

@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/15-greedy/01-maximum-subarray",
+  "examples": [],
+  "hints": [],
+  "id": 122,
+  "leetcode": 53,
+  "leetcode_url": "https://leetcode.com/problems/maximum-subarray/",
+  "neetcode_url": "https://neetcode.io/problems/maximum-subarray",
+  "pattern": "Greedy",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "maxSubArray",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "maximum-subarray",
+  "statement": "Maximum Subarray is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Maximum Subarray",
+  "topic": "Greedy",
+  "topic_slug": "greedy"
+}

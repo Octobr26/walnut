@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/16-intervals/05-meeting-rooms-ii",
+  "examples": [],
+  "hints": [],
+  "id": 134,
+  "leetcode": 253,
+  "leetcode_url": "https://leetcode.com/problems/meeting-rooms-ii/",
+  "neetcode_url": "https://neetcode.io/problems/meeting-schedule-ii",
+  "pattern": "Intervals",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "minMeetingRooms",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "meeting-rooms-ii",
+  "statement": "Meeting Rooms II is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Meeting Rooms II",
+  "topic": "Intervals",
+  "topic_slug": "intervals"
+}

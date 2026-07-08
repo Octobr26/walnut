@@ -1,0 +1,94 @@
+{
+  "cases": [
+    {
+      "args": {
+        "k": 2,
+        "nums": [
+          1,
+          1,
+          1,
+          2,
+          2,
+          3
+        ]
+      },
+      "expected": [
+        1,
+        2
+      ],
+      "kind": "example"
+    },
+    {
+      "args": {
+        "k": 1,
+        "nums": [
+          1
+        ]
+      },
+      "expected": [
+        1
+      ],
+      "kind": "edge"
+    },
+    {
+      "args": {
+        "k": 2,
+        "nums": [
+          -1,
+          -1,
+          2,
+          2,
+          2,
+          3
+        ]
+      },
+      "expected": [
+        -1,
+        2
+      ],
+      "kind": "edge"
+    },
+    {
+      "gen": {
+        "fn": "make_case",
+        "seed": 1
+      },
+      "kind": "stress",
+      "timeout_sec": 5
+    }
+  ],
+  "constraints": [
+    "1 <= k <= number of distinct values.",
+    "The output order does not matter."
+  ],
+  "difficulty": "Medium",
+  "dir": "problems/01-arrays-and-hashing/05-top-k-frequent-elements",
+  "examples": [
+    {
+      "input": "nums = [1,1,1,2,2,3], k = 2",
+      "output": "[1,2]"
+    }
+  ],
+  "hints": [
+    "Count each number first.",
+    "You only need the k largest counts.",
+    "A heap or bucket list avoids sorting everything for large inputs."
+  ],
+  "id": 5,
+  "leetcode": 347,
+  "leetcode_url": "https://leetcode.com/problems/top-k-frequent-elements/",
+  "neetcode_url": "https://neetcode.io/problems/top-k-elements-in-list",
+  "pattern": "Frequency counting",
+  "runner": {
+    "compare": "sorted",
+    "entry": "method",
+    "method": "topKFrequent",
+    "timeout_sec": 5
+  },
+  "seeded": true,
+  "slug": "top-k-frequent-elements",
+  "statement": "Return the k values that appear most often in the input list. The answer can be returned in any order.",
+  "title": "Top K Frequent Elements",
+  "topic": "Arrays & Hashing",
+  "topic_slug": "arrays-and-hashing"
+}

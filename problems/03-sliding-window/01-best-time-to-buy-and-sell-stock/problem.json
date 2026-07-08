@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/03-sliding-window/01-best-time-to-buy-and-sell-stock",
+  "examples": [],
+  "hints": [],
+  "id": 15,
+  "leetcode": 121,
+  "leetcode_url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+  "neetcode_url": "https://neetcode.io/problems/buy-and-sell-crypto",
+  "pattern": "Sliding Window",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "maxProfit",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "best-time-to-buy-and-sell-stock",
+  "statement": "Best Time to Buy and Sell Stock is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Best Time to Buy And Sell Stock",
+  "topic": "Sliding Window",
+  "topic_slug": "sliding-window"
+}

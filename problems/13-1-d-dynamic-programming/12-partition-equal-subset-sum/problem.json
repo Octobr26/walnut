@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/13-1-d-dynamic-programming/12-partition-equal-subset-sum",
+  "examples": [],
+  "hints": [],
+  "id": 110,
+  "leetcode": 416,
+  "leetcode_url": "https://leetcode.com/problems/partition-equal-subset-sum/",
+  "neetcode_url": "https://neetcode.io/problems/partition-equal-subset-sum",
+  "pattern": "1-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "canPartition",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "partition-equal-subset-sum",
+  "statement": "Partition Equal Subset Sum is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Partition Equal Subset Sum",
+  "topic": "1-D Dynamic Programming",
+  "topic_slug": "1-d-dynamic-programming"
+}

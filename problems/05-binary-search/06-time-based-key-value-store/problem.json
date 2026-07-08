@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/05-binary-search/06-time-based-key-value-store",
+  "examples": [],
+  "hints": [],
+  "id": 33,
+  "leetcode": 981,
+  "leetcode_url": "https://leetcode.com/problems/time-based-key-value-store/",
+  "neetcode_url": "https://neetcode.io/problems/time-based-key-value-store",
+  "pattern": "Binary Search",
+  "runner": {
+    "class": "TimeMap",
+    "compare": "exact",
+    "entry": "design",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "time-based-key-value-store",
+  "statement": "Time Based Key-Value Store is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Time Based Key Value Store",
+  "topic": "Binary Search",
+  "topic_slug": "binary-search"
+}

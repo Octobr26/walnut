@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/15-greedy/04-gas-station",
+  "examples": [],
+  "hints": [],
+  "id": 125,
+  "leetcode": 134,
+  "leetcode_url": "https://leetcode.com/problems/gas-station/",
+  "neetcode_url": "https://neetcode.io/problems/gas-station",
+  "pattern": "Greedy",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "canCompleteCircuit",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "gas-station",
+  "statement": "Gas Station is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Gas Station",
+  "topic": "Greedy",
+  "topic_slug": "greedy"
+}

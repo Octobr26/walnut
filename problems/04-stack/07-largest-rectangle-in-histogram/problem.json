@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Hard",
+  "dir": "problems/04-stack/07-largest-rectangle-in-histogram",
+  "examples": [],
+  "hints": [],
+  "id": 27,
+  "leetcode": 84,
+  "leetcode_url": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+  "neetcode_url": "https://neetcode.io/problems/largest-rectangle-in-histogram",
+  "pattern": "Stack",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "largestRectangleArea",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "largest-rectangle-in-histogram",
+  "statement": "Largest Rectangle in Histogram is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Largest Rectangle In Histogram",
+  "topic": "Stack",
+  "topic_slug": "stack"
+}

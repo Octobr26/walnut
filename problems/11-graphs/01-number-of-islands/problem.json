@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/11-graphs/01-number-of-islands",
+  "examples": [],
+  "hints": [],
+  "id": 80,
+  "leetcode": 200,
+  "leetcode_url": "https://leetcode.com/problems/number-of-islands/",
+  "neetcode_url": "https://neetcode.io/problems/count-number-of-islands",
+  "pattern": "Graphs",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "numIslands",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "number-of-islands",
+  "statement": "Number of Islands is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Number of Islands",
+  "topic": "Graphs",
+  "topic_slug": "graphs"
+}

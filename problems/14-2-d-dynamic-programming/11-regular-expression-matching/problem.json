@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Hard",
+  "dir": "problems/14-2-d-dynamic-programming/11-regular-expression-matching",
+  "examples": [],
+  "hints": [],
+  "id": 121,
+  "leetcode": 10,
+  "leetcode_url": "https://leetcode.com/problems/regular-expression-matching/",
+  "neetcode_url": "https://neetcode.io/problems/regular-expression-matching",
+  "pattern": "2-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "isMatch",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "regular-expression-matching",
+  "statement": "Regular Expression Matching is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Regular Expression Matching",
+  "topic": "2-D Dynamic Programming",
+  "topic_slug": "2-d-dynamic-programming"
+}

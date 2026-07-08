@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/10-backtracking/04-subsets-ii",
+  "examples": [],
+  "hints": [],
+  "id": 74,
+  "leetcode": 90,
+  "leetcode_url": "https://leetcode.com/problems/subsets-ii/",
+  "neetcode_url": "https://neetcode.io/problems/subsets-ii",
+  "pattern": "Backtracking",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "subsetsWithDup",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "subsets-ii",
+  "statement": "Subsets II is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Subsets II",
+  "topic": "Backtracking",
+  "topic_slug": "backtracking"
+}

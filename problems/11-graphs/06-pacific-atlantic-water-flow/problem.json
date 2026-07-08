@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/11-graphs/06-pacific-atlantic-water-flow",
+  "examples": [],
+  "hints": [],
+  "id": 85,
+  "leetcode": 417,
+  "leetcode_url": "https://leetcode.com/problems/pacific-atlantic-water-flow/",
+  "neetcode_url": "https://neetcode.io/problems/pacific-atlantic-water-flow",
+  "pattern": "Graphs",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "pacificAtlantic",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "pacific-atlantic-water-flow",
+  "statement": "Pacific Atlantic Water Flow is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Pacific Atlantic Water Flow",
+  "topic": "Graphs",
+  "topic_slug": "graphs"
+}

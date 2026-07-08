@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/17-math-and-geometry/06-pow-x-n",
+  "examples": [],
+  "hints": [],
+  "id": 141,
+  "leetcode": 50,
+  "leetcode_url": "https://leetcode.com/problems/powx-n/",
+  "neetcode_url": "https://neetcode.io/problems/pow-x-n",
+  "pattern": "Math & Geometry",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "myPow",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "pow-x-n",
+  "statement": "Pow(x, n) is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Pow(x, n)",
+  "topic": "Math & Geometry",
+  "topic_slug": "math-and-geometry"
+}

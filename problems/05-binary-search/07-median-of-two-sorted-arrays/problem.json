@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Hard",
+  "dir": "problems/05-binary-search/07-median-of-two-sorted-arrays",
+  "examples": [],
+  "hints": [],
+  "id": 34,
+  "leetcode": 4,
+  "leetcode_url": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
+  "neetcode_url": "https://neetcode.io/problems/median-of-two-sorted-arrays",
+  "pattern": "Binary Search",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "findMedianSortedArrays",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "median-of-two-sorted-arrays",
+  "statement": "Median of Two Sorted Arrays is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Median of Two Sorted Arrays",
+  "topic": "Binary Search",
+  "topic_slug": "binary-search"
+}

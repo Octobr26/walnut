@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/11-graphs/04-walls-and-gates",
+  "examples": [],
+  "hints": [],
+  "id": 83,
+  "leetcode": 286,
+  "leetcode_url": "https://leetcode.com/problems/walls-and-gates/",
+  "neetcode_url": "https://neetcode.io/problems/islands-and-treasure",
+  "pattern": "Graphs",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "wallsAndGates",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "walls-and-gates",
+  "statement": "Walls and Gates is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Walls And Gates",
+  "topic": "Graphs",
+  "topic_slug": "graphs"
+}

@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/12-advanced-graphs/02-min-cost-to-connect-all-points",
+  "examples": [],
+  "hints": [],
+  "id": 94,
+  "leetcode": 1584,
+  "leetcode_url": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
+  "neetcode_url": "https://neetcode.io/problems/min-cost-to-connect-points",
+  "pattern": "Advanced Graphs",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "minCostConnectPoints",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "min-cost-to-connect-all-points",
+  "statement": "Min Cost to Connect All Points is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Min Cost to Connect All Points",
+  "topic": "Advanced Graphs",
+  "topic_slug": "advanced-graphs"
+}

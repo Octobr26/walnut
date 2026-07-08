@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Medium",
+  "dir": "problems/15-greedy/02-jump-game",
+  "examples": [],
+  "hints": [],
+  "id": 123,
+  "leetcode": 55,
+  "leetcode_url": "https://leetcode.com/problems/jump-game/",
+  "neetcode_url": "https://neetcode.io/problems/jump-game",
+  "pattern": "Greedy",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "canJump",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "jump-game",
+  "statement": "Jump Game is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Jump Game",
+  "topic": "Greedy",
+  "topic_slug": "greedy"
+}

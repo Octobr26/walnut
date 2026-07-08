@@ -1,0 +1,74 @@
+{
+  "cases": [
+    {
+      "args": {
+        "s": "A man, a plan, a canal: Panama"
+      },
+      "expected": true,
+      "kind": "example"
+    },
+    {
+      "args": {
+        "s": "race a car"
+      },
+      "expected": false,
+      "kind": "example"
+    },
+    {
+      "args": {
+        "s": " "
+      },
+      "expected": true,
+      "kind": "edge"
+    },
+    {
+      "args": {
+        "s": "0P"
+      },
+      "expected": false,
+      "kind": "edge"
+    },
+    {
+      "gen": {
+        "fn": "make_case",
+        "seed": 1
+      },
+      "kind": "stress",
+      "timeout_sec": 5
+    }
+  ],
+  "constraints": [
+    "Ignore punctuation and spaces.",
+    "Compare letters without case sensitivity."
+  ],
+  "difficulty": "Easy",
+  "dir": "problems/02-two-pointers/01-valid-palindrome",
+  "examples": [
+    {
+      "input": "s = \"A man, a plan, a canal: Panama\"",
+      "output": "true"
+    }
+  ],
+  "hints": [
+    "Move one pointer from each end.",
+    "Skip characters that are not letters or digits.",
+    "Compare lowercased characters when both pointers are valid."
+  ],
+  "id": 10,
+  "leetcode": 125,
+  "leetcode_url": "https://leetcode.com/problems/valid-palindrome/",
+  "neetcode_url": "https://neetcode.io/problems/is-palindrome",
+  "pattern": "Filtered two-pointer scan",
+  "runner": {
+    "compare": "bool",
+    "entry": "method",
+    "method": "isPalindrome",
+    "timeout_sec": 5
+  },
+  "seeded": true,
+  "slug": "valid-palindrome",
+  "statement": "Return true when a string reads the same forward and backward after ignoring non-alphanumeric characters and letter case.",
+  "title": "Valid Palindrome",
+  "topic": "Two Pointers",
+  "topic_slug": "two-pointers"
+}

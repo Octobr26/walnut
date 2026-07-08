@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/18-bit-manipulation/01-single-number",
+  "examples": [],
+  "hints": [],
+  "id": 144,
+  "leetcode": 136,
+  "leetcode_url": "https://leetcode.com/problems/single-number/",
+  "neetcode_url": "https://neetcode.io/problems/single-number",
+  "pattern": "Bit Manipulation",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "singleNumber",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "single-number",
+  "statement": "Single Number is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Single Number",
+  "topic": "Bit Manipulation",
+  "topic_slug": "bit-manipulation"
+}

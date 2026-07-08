@@ -1,0 +1,97 @@
+{
+  "cases": [
+    {
+      "args": {
+        "nums": [
+          1,
+          2,
+          3,
+          1
+        ]
+      },
+      "expected": true,
+      "kind": "example"
+    },
+    {
+      "args": {
+        "nums": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "expected": false,
+      "kind": "example"
+    },
+    {
+      "args": {
+        "nums": [
+          7
+        ]
+      },
+      "expected": false,
+      "kind": "edge",
+      "note": "single item"
+    },
+    {
+      "args": {
+        "nums": [
+          -1,
+          4,
+          -1
+        ]
+      },
+      "expected": true,
+      "kind": "edge",
+      "note": "negative duplicate"
+    },
+    {
+      "gen": {
+        "fn": "make_case",
+        "seed": 1
+      },
+      "kind": "stress",
+      "note": "large list with duplicate at end",
+      "timeout_sec": 3
+    }
+  ],
+  "constraints": [
+    "The input is a list of integers.",
+    "A linear-time solution should use extra space for seen values."
+  ],
+  "difficulty": "Easy",
+  "dir": "problems/01-arrays-and-hashing/01-contains-duplicate",
+  "examples": [
+    {
+      "input": "nums = [1,2,3,1]",
+      "output": "true"
+    },
+    {
+      "input": "nums = [1,2,3,4]",
+      "output": "false"
+    }
+  ],
+  "hints": [
+    "A duplicate means a value was seen earlier.",
+    "A set gives constant-time membership checks.",
+    "Return as soon as a repeated value is found."
+  ],
+  "id": 1,
+  "leetcode": 217,
+  "leetcode_url": "https://leetcode.com/problems/contains-duplicate/",
+  "neetcode_url": "https://neetcode.io/problems/duplicate-integer",
+  "pattern": "Duplicate detection with a set",
+  "runner": {
+    "compare": "bool",
+    "entry": "method",
+    "method": "hasDuplicate",
+    "timeout_sec": 3
+  },
+  "seeded": true,
+  "slug": "contains-duplicate",
+  "statement": "Given a list of integers, return true when at least one value appears more than once. Return false when every value is unique.",
+  "title": "Contains Duplicate",
+  "topic": "Arrays & Hashing",
+  "topic_slug": "arrays-and-hashing"
+}

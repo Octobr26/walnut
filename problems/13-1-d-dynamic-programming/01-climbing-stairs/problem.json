@@ -1,0 +1,25 @@
+{
+  "cases": [],
+  "constraints": [],
+  "difficulty": "Easy",
+  "dir": "problems/13-1-d-dynamic-programming/01-climbing-stairs",
+  "examples": [],
+  "hints": [],
+  "id": 99,
+  "leetcode": 70,
+  "leetcode_url": "https://leetcode.com/problems/climbing-stairs/",
+  "neetcode_url": "https://neetcode.io/problems/climbing-stairs",
+  "pattern": "1-D Dynamic Programming",
+  "runner": {
+    "compare": "exact",
+    "entry": "method",
+    "method": "climbStairs",
+    "timeout_sec": 10
+  },
+  "seeded": false,
+  "slug": "climbing-stairs",
+  "statement": "Climbing Stairs is not seeded yet. Use the LeetCode link for the full prompt, then practice locally with the starter signature.",
+  "title": "Climbing Stairs",
+  "topic": "1-D Dynamic Programming",
+  "topic_slug": "1-d-dynamic-programming"
+}
