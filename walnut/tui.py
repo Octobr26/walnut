@@ -118,6 +118,7 @@ if TEXTUAL_AVAILABLE:
             self.by_slug = {ref.slug: ref for ref in self.refs}
             self.progress = progress_mod.load_progress(root)
             self._progress_stamp = self._progress_file_stamp()
+            self._selected_slug: str | None = None
             self.drilled: str | None = None  # topic slug when inside a topic
             self.filter_text = ""
             self.test_outputs: dict[str, Text] = {}
@@ -280,7 +281,7 @@ if TEXTUAL_AVAILABLE:
                 return
 
             ref = self.by_slug[slug]
-            progress_mod.save_selected(self.root, ref.slug)
+            self._save_selected_once(ref.slug)
             problem = load_problem(self.root, ref)
             status = _status_for(self.progress, ref.slug)
             icon, style = STATUS_ICONS.get(status, STATUS_ICONS["unsolved"])
@@ -309,6 +310,12 @@ if TEXTUAL_AVAILABLE:
             detail.update(text)
             self._render_tests()
             self.query_one("#detail-scroll", VerticalScroll).scroll_home(animate=False)
+
+        def _save_selected_once(self, slug: str) -> None:
+            if slug == self._selected_slug:
+                return
+            progress_mod.save_selected(self.root, slug)
+            self._selected_slug = slug
 
         def _render_tests(self) -> None:
             test_detail = self.query_one("#test-detail", Static)
@@ -472,7 +479,6 @@ if TEXTUAL_AVAILABLE:
                 index = 0
             tabs.active = tab_ids[(index + delta) % len(tab_ids)]
             self._active_list().focus()
-            self._render_detail()
 
         def action_back(self) -> None:
             filter_input = self.query_one("#filter", Input)
