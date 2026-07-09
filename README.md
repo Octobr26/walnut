@@ -54,10 +54,13 @@ export PATH="$HOME/.local/bin:$PATH"
 walnut
 ```
 
+After setup, `walnut` can run from any directory.
+The cloned repo stays the source of truth for the app, problem library, local progress, notes, and attempts.
+
 In an interactive terminal, plain `walnut` opens the browse interface.
 Use `walnut home` for the static dashboard, or `walnut tui` when you want to be explicit.
 
-`./setup` creates `.venv/`, installs Walnut in editable mode, writes a `~/.local/bin/walnut` wrapper, and runs `doctor` plus `verify --all`.
+`./setup` creates `.venv/`, installs Walnut in editable mode, writes a `~/.local/bin/walnut` wrapper, pins that wrapper to this repo with `WALNUT_HOME`, and runs `doctor` plus `verify --all`.
 It does not edit your shell profile by default.
 It prints the one PATH line you can add yourself.
 Pass `--modify-profile` if you want it to add that line to your shell profile.
@@ -158,9 +161,11 @@ q         quit
 If you prefer another shell or pane, run tests there with `walnut test <id> --perf`.
 The TUI picks up the latest progress within a second.
 
-## Tmux Workflow
+## Recommended Tmux Workflow
 
-Walnut works well with tmux, Ghostty tabs, iTerm panes, or any setup where you keep multiple terminal windows open.
+Walnut is designed around a multi-pane terminal workflow.
+Tmux is the recommended setup, but it is not required.
+Ghostty tabs, iTerm panes, or any setup with separate terminal windows work too.
 
 The layout I use is:
 

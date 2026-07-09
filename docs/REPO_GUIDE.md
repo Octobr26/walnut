@@ -23,6 +23,9 @@ walnut topics
 walnut show 3
 ```
 
+You can run `walnut` from any directory after setup.
+The wrapper points back to this clone, and this repo remains the source of truth for roadmap content, local progress, attempts, and notes.
+
 In an interactive terminal, plain `walnut` opens the TUI.
 Use `walnut home` for the static dashboard.
 

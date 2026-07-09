@@ -78,6 +78,9 @@ fi
 echo "Using $PYTHON_BIN ($PYTHON_VERSION)"
 
 VENV_DIR="${WALNUT_VENV:-"$ROOT/.venv"}"
+if [[ "$VENV_DIR" != /* ]]; then
+  VENV_DIR="$ROOT/$VENV_DIR"
+fi
 if [[ ! -x "$VENV_DIR/bin/python" ]]; then
   echo "Creating virtual environment at $VENV_DIR..."
   "$PYTHON_BIN" -m venv "$VENV_DIR"
@@ -98,10 +101,15 @@ mkdir -p "$USER_BIN"
 WRAPPER="$USER_BIN/walnut"
 cat > "$WRAPPER" <<EOF
 #!/usr/bin/env bash
+export WALNUT_HOME="$ROOT"
 exec "$VENV_PYTHON" -m walnut.cli "\$@"
 EOF
 chmod +x "$WRAPPER"
 
+PATH_READY=0
+case ":$PATH:" in
+  *":$USER_BIN:"*) PATH_READY=1 ;;
+esac
 export PATH="$USER_BIN:$PATH"
 
 WALNUT_CMD=("$WRAPPER")
@@ -138,6 +146,11 @@ echo "Checking Walnut..."
 echo ""
 echo "Ready."
 echo ""
+if [[ "$PATH_READY" != "1" && "$MODIFY_PROFILE" != "1" ]]; then
+  echo "For this terminal:"
+  echo "  $PATH_LINE"
+  echo ""
+fi
 echo "Try:"
 echo "  walnut        # interactive TUI"
 echo "  walnut home   # static dashboard"

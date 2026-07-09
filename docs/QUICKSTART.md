@@ -22,6 +22,7 @@ The setup script does four things:
 - checks that Python 3.9+ is available
 - creates a local `.venv/` and installs the normal CLI and TUI dependencies there
 - writes a `walnut` wrapper to `~/.local/bin/walnut`
+- pins that wrapper to this repo with `WALNUT_HOME`
 - runs `walnut doctor` and `walnut verify --all`
 
 By default, setup does not edit your shell profile.
@@ -33,6 +34,10 @@ For the current terminal session, add the wrapper directory to `PATH`:
 ```bash
 export PATH="$HOME/.local/bin:$PATH"
 ```
+
+After that, `walnut` can run from any directory.
+The repo remains the Walnut app and local problem library.
+If you move the repo, rerun `./setup`.
 
 Useful setup knobs:
 
