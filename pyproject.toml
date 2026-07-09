@@ -9,9 +9,6 @@ description = "Offline NeetCode-150 practice CLI"
 requires-python = ">=3.9"
 dependencies = ["rich>=13", "textual>=0.60"]
 
-[project.optional-dependencies]
-tui = ["textual>=0.60"]
-
 [project.scripts]
 walnut = "walnut.cli:main"
 

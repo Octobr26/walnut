@@ -1,4 +1,4 @@
-PYTHON ?= python3
+PYTHON ?= $(shell [ -x .venv/bin/python ] && echo .venv/bin/python || echo python3)
 WALNUT := $(PYTHON) -m walnut.cli
 ID ?= 3
 TOPIC ?= arrays-and-hashing
@@ -8,8 +8,7 @@ TOPIC ?= arrays-and-hashing
 setup:
 	./setup
 
-install:
-	./setup
+install: setup
 
 tui:
 	$(WALNUT) tui
@@ -31,9 +30,6 @@ pick:
 
 test:
 	$(WALNUT) test $(ID) --perf
-
-testv2:
-	$(PYTHON) test $(ID) --perf
 
 run:
 	$(WALNUT) run $(ID) --perf
