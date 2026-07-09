@@ -4,7 +4,7 @@ import textwrap
 from pathlib import Path
 from typing import Any
 
-from .repo import ProblemRef, load_problem, problem_dir
+from .repo import ProblemRef, load_problem, problem_dir, solution_path
 
 
 HEADER_MARKER = "# Walnut problem:"
@@ -57,7 +57,7 @@ def solution_header(root: Path, ref: ProblemRef, problem: dict[str, Any] | None 
 
 def ensure_solution(root: Path, ref: ProblemRef, problem: dict[str, Any] | None = None) -> Path:
     pdir = problem_dir(root, ref)
-    solution = pdir / "solution.py"
+    solution = solution_path(root, ref)
     header = solution_header(root, ref, problem)
 
     if not solution.exists():

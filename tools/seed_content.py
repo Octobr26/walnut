@@ -296,7 +296,6 @@ URL_OVERRIDES = {
     "Time Based Key-Value Store": "time-based-key-value-store",
     "Implement Trie (Prefix Tree)": "implement-trie-prefix-tree",
     "Design Add and Search Words Data Structure": "design-add-and-search-words-data-structure",
-    "1-D Dynamic Programming": "1-d-dynamic-programming",
     "Pow(x, n)": "powx-n",
 }
 
@@ -367,7 +366,7 @@ def starter_for(method: str) -> str:
     ).lstrip()
 
 
-def base_problem(pid, title, lc, difficulty, method, topic_name, topic_slug, seeded, local_index):
+def base_problem(pid, title, lc, difficulty, method, topic_name, topic_slug, seeded):
     slug = slugify(title)
     runner = {"entry": "method", "method": method, "compare": "exact", "timeout_sec": 10}
     if method == "encode/decode":
@@ -694,13 +693,13 @@ def main() -> None:
         topic_entry = {"id": topic_index, "slug": topic_slug, "name": topic_name, "blurb": blurb, "problems": []}
         for local_index, (pid, title, lc, difficulty, method) in enumerate(problems, start=1):
             seeded = pid in SEEDED
-            problem = base_problem(pid, title, lc, difficulty, method, topic_name, topic_slug, seeded, local_index)
+            problem = base_problem(pid, title, lc, difficulty, method, topic_name, topic_slug, seeded)
             if seeded:
                 problem.update({k: v for k, v in SEEDED[pid].items() if k not in {"reference", "fixtures"}})
                 problem["seeded"] = True
             problem_slug = problem["slug"]
             pdir = Path(topic_dir) / f"{local_index:02d}-{problem_slug}"
-            problem["dir"] = str(pdir)
+            problem["dir"] = pdir.as_posix()
             topic_entry["problems"].append(
                 {
                     "id": pid,
@@ -711,7 +710,7 @@ def main() -> None:
                     "leetcode_url": problem["leetcode_url"],
                     "method": None if method in DESIGN_CLASSES else method,
                     "seeded": seeded,
-                    "dir": str(pdir),
+                    "dir": pdir.as_posix(),
                 }
             )
 

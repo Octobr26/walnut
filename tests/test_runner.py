@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import shutil
 import sys
+import threading
 from pathlib import Path
 from textwrap import dedent
 
@@ -103,6 +104,42 @@ class RunnerTests(unittest.TestCase):
             }
             result = run(tmp, problem)
             self.assertTrue(result.ok)
+        finally:
+            clean_tmp(tmp)
+
+    def test_timeout_in_worker_thread_returns_without_waiting_for_user_code(self):
+        from walnut.runner import run
+
+        tmp = ROOT / ".tmp-runner-timeout-thread"
+        tmp.mkdir(exist_ok=True)
+        try:
+            (tmp / "solution.py").write_text(
+                "import time\nclass Solution:\n    def slow(self):\n        time.sleep(2)\n        return 1\n"
+            )
+            problem = {
+                "runner": {
+                    "entry": "method",
+                    "method": "slow",
+                    "compare": "exact",
+                    "timeout_sec": 0.05,
+                },
+                "cases": [{"args": {}, "expected": 1}],
+            }
+            result_holder = {}
+
+            def target() -> None:
+                result_holder["result"] = run(tmp, problem)
+
+            thread = threading.Thread(target=target)
+            thread.start()
+            thread.join(1)
+
+            self.assertFalse(thread.is_alive())
+            result = result_holder["result"]
+            self.assertFalse(result.ok)
+            self.assertTrue(result.timed_out)
+            self.assertTrue(result.failures[0].timed_out)
+            self.assertIn("timed out after", result.failures[0].error)
         finally:
             clean_tmp(tmp)
 

@@ -10,10 +10,20 @@ from typing import Any
 from rich.text import Text
 
 from .files import ensure_notes, ensure_solution
+from .format import (
+    STATUS_ICONS,
+    failure_by_case as _failure_by_case,
+    format_time as _format_time,
+    progress_bar as _progress_bar,
+    short as _short,
+    status_for as _status_for,
+    target_for as _target_for,
+)
 from . import progress as progress_mod
 from .repo import (
     ProblemRef,
     all_problem_refs,
+    cheatsheet_path,
     load_problem,
     load_roadmap,
     problem_dir,
@@ -30,49 +40,6 @@ try:
     TEXTUAL_AVAILABLE = True
 except Exception:  # pragma: no cover - import guard
     TEXTUAL_AVAILABLE = False
-
-
-STATUS_ICONS = {"solved": ("✓", "green"), "attempted": ("●", "yellow"), "unsolved": ("○", "dim")}
-
-
-def _status_for(progress: dict[str, Any], slug: str) -> str:
-    return progress.get("problems", {}).get(slug, {}).get("status", "unsolved")
-
-
-def _format_time(seconds: int | None) -> str:
-    if seconds is None:
-        return "--"
-    minutes, secs = divmod(int(seconds), 60)
-    return f"{minutes}:{secs:02d}"
-
-
-def _target_for(problem: dict[str, Any], active: dict[str, Any] | None = None) -> int:
-    if active and active.get("target_sec"):
-        return int(active["target_sec"])
-    return progress_mod.TARGET_TIMES.get(problem.get("difficulty", "Medium"), 1800)
-
-
-def _short(value: Any, limit: int = 220) -> str:
-    text = repr(value)
-    if len(text) <= limit:
-        return text
-    return text[: limit - 20] + " ... <truncated>"
-
-
-def _failure_by_case(result: RunResult) -> dict[int, Any]:
-    return {failure.index: failure for failure in result.failures}
-
-
-def _progress_bar(done: int, total: int, width: int = 12) -> Text:
-    filled = round(width * done / max(total, 1))
-    if done > 0 and filled == 0:
-        filled = 1
-    if done < total and filled == width:
-        filled = width - 1
-    text = Text()
-    text.append("█" * filled, style="green")
-    text.append("░" * (width - filled), style="dim")
-    return text
 
 
 def _problem_row(ref: ProblemRef, status: str, width: int = 34) -> Text:
@@ -150,21 +117,24 @@ if TEXTUAL_AVAILABLE:
             self.refs = all_problem_refs(root)
             self.by_slug = {ref.slug: ref for ref in self.refs}
             self.progress = progress_mod.load_progress(root)
-            self._progress_mtime = self._mtime()
+            self._progress_stamp = self._progress_file_stamp()
             self.drilled: str | None = None  # topic slug when inside a topic
             self.filter_text = ""
             self.test_outputs: dict[str, Text] = {}
 
         # ---------- data ----------
 
-        def _mtime(self) -> float:
+        def _progress_file_stamp(self) -> tuple[int, int]:
             path = progress_mod.progress_path(self.root)
-            return path.stat().st_mtime if path.exists() else 0.0
+            if not path.exists():
+                return (0, 0)
+            stat = path.stat()
+            return (stat.st_mtime_ns, stat.st_size)
 
         def _reload_progress_if_changed(self) -> bool:
-            mtime = self._mtime()
-            if mtime != self._progress_mtime:
-                self._progress_mtime = mtime
+            stamp = self._progress_file_stamp()
+            if stamp != self._progress_stamp:
+                self._progress_stamp = stamp
                 self.progress = progress_mod.load_progress(self.root)
                 return True
             return False
@@ -225,7 +195,6 @@ if TEXTUAL_AVAILABLE:
                     text.append(f"{solved:>2}/{total}", style=style)
                     lst.add_option(Option(text, id=f"topic:{topic['slug']}"))
             else:
-                topic = self._topic(self.drilled)
                 for ref in self.refs:
                     if ref.topic_slug == self.drilled and self._matches(ref):
                         status = _status_for(self.progress, ref.slug)
@@ -414,7 +383,7 @@ if TEXTUAL_AVAILABLE:
             line1 = Text()
             active = self.progress.get("active")
             if active:
-                slug = active.get("slug")
+                slug = active.get("slug") or ""
                 ref = self.by_slug.get(slug)
                 started = float(active.get("started_at", time.time()))
                 elapsed = int(time.time() - started)
@@ -424,7 +393,7 @@ if TEXTUAL_AVAILABLE:
                 )
                 over = elapsed > target
                 line1.append("active ", style="bold cyan")
-                line1.append(f"#{ref.id} {ref.title}" if ref else slug)
+                line1.append(f"#{ref.id} {ref.title}" if ref else (slug or "--"))
                 line1.append("  ⏱ ")
                 line1.append(
                     f"{_format_time(elapsed)}/{_format_time(target)}",
@@ -448,9 +417,12 @@ if TEXTUAL_AVAILABLE:
             line2 = Text()
             line2.append(f"{solved}/{total} solved ", style="bold")
             line2.append(_progress_bar(solved, total))
-            streak = self.progress.get("streak", {}).get("current", 0)
+            streak = progress_mod.current_streak(self.progress)
             line2.append(f"  streak {streak}d", style="magenta")
-            line2.append("   s start  e editor  n notes  t test  r reset  [ ] tabs  c cheat  / filter  q quit", style="dim")
+            line2.append(
+                "   s start  e editor  n notes  t test  r reset  [ ] tabs  c cheat  / filter  esc back  q quit",
+                style="dim",
+            )
             status.update(Text("\n").join([line1, line2]))
 
         def _tick(self) -> None:
@@ -509,6 +481,11 @@ if TEXTUAL_AVAILABLE:
                 self.filter_text = ""
                 filter_input.remove_class("visible")
                 self._refresh_lists()
+                self._active_list().focus()
+                return
+            detail_tabs = self.query_one("#detail-tabs", TabbedContent)
+            if detail_tabs.active == "tab-tests":
+                self._select_detail_tab("tab-problem")
                 self._active_list().focus()
                 return
             if self.drilled is not None:
@@ -583,22 +560,16 @@ if TEXTUAL_AVAILABLE:
             if ref is None:
                 self.notify("highlight a problem first", severity="warning")
                 return
-            state = progress_mod.load_progress(self.root)
-            ok, active_slug = progress_mod.arm_timer(state, ref.slug)
+            problem = load_problem(self.root, ref)
+            ok, active_slug, state, solution, existed = progress_mod.start_problem(self.root, ref, problem=problem)
             if not ok:
                 self.notify(f"timer already active for {active_slug} — finish or reset it first", severity="warning")
                 return
-            progress_mod.mark_attempted(state, ref.slug)
-            progress_mod.save_progress(self.root, state)
-            problem = load_problem(self.root, ref)
-            solution = problem_dir(self.root, ref) / "solution.py"
-            created = not solution.exists()
-            ensure_solution(self.root, ref, problem)
             self.progress = state
-            self._progress_mtime = self._mtime()
+            self._progress_stamp = self._progress_file_stamp()
             self._refresh_lists(ref.slug)
             self._render_status()
-            verb = "created" if created else "ready"
+            verb = "ready" if existed else "created"
             self.notify(f"{verb}: {solution}\ntest: walnut test {ref.id} --perf", timeout=8)
 
         def action_editor(self) -> None:
@@ -621,7 +592,7 @@ if TEXTUAL_AVAILABLE:
             state["active"] = None
             progress_mod.save_progress(self.root, state)
             self.progress = state
-            self._progress_mtime = self._mtime()
+            self._progress_stamp = self._progress_file_stamp()
             self._render_status()
             self.notify(f"reset {active.get('slug')} at {_format_time(elapsed)}; press s to start again")
 
@@ -657,39 +628,30 @@ if TEXTUAL_AVAILABLE:
                 test_detail.update(output)
                 return
 
+            self.run_worker(
+                lambda: self._run_test_worker(ref),
+                name=f"test-{ref.slug}",
+                group="tests",
+                exit_on_error=False,
+                thread=True,
+            )
+
+        def _run_test_worker(self, ref: ProblemRef) -> None:
+            problem = load_problem(self.root, ref)
             ensure_solution(self.root, ref, problem)
             result = run(problem_dir(self.root, ref), problem)
             output = self._format_test_result(ref, problem, result)
-            self.test_outputs[ref.slug] = output
+            state, _record, _elapsed = progress_mod.record_run(self.root, ref, problem, result)
+            self.call_from_thread(self._finish_test_worker, ref.slug, output, state)
+
+        def _finish_test_worker(self, slug: str, output: Text, state: dict[str, Any]) -> None:
+            test_detail = self.query_one("#test-detail", Static)
+            self.test_outputs[slug] = output
             test_detail.update(output)
             self.query_one("#test-scroll", VerticalScroll).scroll_home(animate=False)
-
-            state = progress_mod.load_progress(self.root)
-            active = state.get("active")
-            now = time.time()
-            elapsed: int | None = None
-            if active and active.get("slug") == ref.slug:
-                elapsed = int(now - float(active["started_at"]))
-            record = progress_mod.ensure_problem(state, ref.slug, now)
-            progress_mod.record_test_result(
-                state,
-                slug=ref.slug,
-                passed=result.ok,
-                cases_passed=result.passed,
-                cases_total=result.total,
-                now=now,
-                local_date=progress_mod.today_local(),
-                time_sec=elapsed,
-                target_sec=_target_for(problem, active),
-                revealed_hints=int(record.get("revealed_hints", 0)),
-                revealed_solution=bool(record.get("revealed_solution")),
-                slowest_case_sec=result.slowest_case_sec,
-                result="pass" if result.ok else ("timeout" if any("timed out" in (f.error or "") for f in result.failures) else "fail"),
-            )
-            progress_mod.save_progress(self.root, state)
             self.progress = state
-            self._progress_mtime = self._mtime()
-            self._refresh_lists(ref.slug)
+            self._progress_stamp = self._progress_file_stamp()
+            self._refresh_lists(slug)
             self._render_status()
 
         def action_cheat(self) -> None:
@@ -704,7 +666,7 @@ if TEXTUAL_AVAILABLE:
                     slug = option.id.split(":", 1)[1]
                 else:
                     slug = "python-stdlib"
-            path = self.root / "docs" / "cheatsheets" / f"{slug}.md"
+            path = cheatsheet_path(self.root, slug)
             if not path.exists():
                 self.notify(f"no cheat sheet: {path.name}", severity="warning")
                 return
@@ -713,7 +675,7 @@ if TEXTUAL_AVAILABLE:
 
 def run_tui(root: Path) -> int:
     if not TEXTUAL_AVAILABLE:
-        print("walnut tui needs Textual. Run ./setup from the Walnut repo root.")
+        print("walnut tui needs Textual. Run ./setup from the Walnut repo root, or pip install -e . inside the venv.")
         return 3
     WalnutApp(root).run()
     return 0

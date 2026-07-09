@@ -91,6 +91,44 @@ class ProgressTests(unittest.TestCase):
         self.assertEqual(problem["best_time_sec"], 30)
         self.assertEqual(progress["streak"]["current"], 2)
 
+    def test_slowest_case_keeps_max_and_streak_display_expires(self):
+        from walnut.progress import current_streak, default_progress, record_test_result
+
+        progress = default_progress()
+        record_test_result(
+            progress,
+            slug="contains-duplicate",
+            passed=True,
+            cases_passed=4,
+            cases_total=4,
+            now=1_788_200_000,
+            local_date="2026-07-01",
+            time_sec=60,
+            target_sec=900,
+            revealed_hints=0,
+            revealed_solution=False,
+            slowest_case_sec=0.5,
+        )
+        record_test_result(
+            progress,
+            slug="contains-duplicate",
+            passed=True,
+            cases_passed=4,
+            cases_total=4,
+            now=1_788_200_100,
+            local_date="2026-07-01",
+            time_sec=50,
+            target_sec=900,
+            revealed_hints=0,
+            revealed_solution=False,
+            slowest_case_sec=0.1,
+        )
+
+        problem = progress["problems"]["contains-duplicate"]
+        self.assertEqual(problem["slowest_case_sec"], 0.5)
+        self.assertEqual(current_streak(progress, "2026-07-02"), 1)
+        self.assertEqual(current_streak(progress, "2026-07-03"), 0)
+
 
 if __name__ == "__main__":
     unittest.main()

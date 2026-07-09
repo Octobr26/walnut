@@ -38,6 +38,19 @@ class NeetCodeMetadataTests(unittest.TestCase):
         self.assertEqual(items[0].neetcode_url, "https://neetcode.io/problems/duplicate-integer")
         self.assertEqual(items[1].title, "Two Sum II Input Array Is Sorted")
 
+    def test_string_decoder_preserves_non_ascii_and_expands_known_escapes(self):
+        from walnut.neetcode import extract_neetcode_150
+
+        bundle = (
+            'const $=[{problem:"Caf\\u00e9 \\"Pair\\" \\\\ Test",'
+            'pattern:"Arrays & Hashing",link:"cafe-pair/",difficulty:"Easy",'
+            'code:"0001-cafe-pair",neetcode150:!0,ncLink:"cafe-pair/"}];'
+        )
+
+        items = extract_neetcode_150(bundle)
+
+        self.assertEqual(items[0].title, 'Caf\u00e9 "Pair" \\ Test')
+
     def test_diff_reports_local_metadata_drift_without_statements(self):
         from walnut.neetcode import RoadmapProblem, diff_roadmap_metadata
 

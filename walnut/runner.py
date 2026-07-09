@@ -9,7 +9,6 @@ import sys
 import threading
 import time
 import traceback
-from concurrent.futures import ThreadPoolExecutor, TimeoutError as FutureTimeout
 from dataclasses import dataclass, field
 from pathlib import Path
 from types import ModuleType
@@ -26,6 +25,10 @@ class Failure:
     got: Any = None
     error: str | None = None
 
+    @property
+    def timed_out(self) -> bool:
+        return bool(self.error and self.error.startswith("timed out after "))
+
 
 @dataclass
 class RunResult:
@@ -38,6 +41,10 @@ class RunResult:
     @property
     def ok(self) -> bool:
         return self.passed == self.total and not self.failures
+
+    @property
+    def timed_out(self) -> bool:
+        return any(failure.timed_out for failure in self.failures)
 
 
 class CaseTimeout(TimeoutError):
@@ -66,15 +73,22 @@ def _call_with_timeout(fn: Callable[[], Any], timeout_sec: float) -> Any:
             signal.setitimer(signal.ITIMER_REAL, 0)
             signal.signal(signal.SIGALRM, previous)
 
-    executor = ThreadPoolExecutor(max_workers=1)
-    future = executor.submit(fn)
-    try:
-        return future.result(timeout=timeout_sec)
-    except FutureTimeout as exc:
-        future.cancel()
-        raise CaseTimeout(f"timed out after {timeout_sec:g}s") from exc
-    finally:
-        executor.shutdown(wait=False, cancel_futures=True)
+    result: dict[str, Any] = {}
+
+    def target() -> None:
+        try:
+            result["value"] = fn()
+        except BaseException as exc:
+            result["error"] = exc
+
+    thread = threading.Thread(target=target, daemon=True)
+    thread.start()
+    thread.join(timeout_sec)
+    if thread.is_alive():
+        raise CaseTimeout(f"timed out after {timeout_sec:g}s")
+    if "error" in result:
+        raise result["error"]
+    return result.get("value")
 
 
 def _load_module(path: Path, timeout_sec: float) -> ModuleType:
@@ -120,10 +134,6 @@ def _materialize_case(problem_dir: Path, case: dict[str, Any], fixtures: ModuleT
     out.update(generated)
     out.setdefault("kind", "example")
     return out
-
-
-def _compare_exact(got: Any, expected: Any) -> bool:
-    return got == expected
 
 
 def _compare_approx(got: Any, expected: Any, tol: float = 1e-6) -> bool:
@@ -285,7 +295,7 @@ def _validate_args(signature: inspect.Signature, args: dict[str, Any]) -> list[s
     for name, param in params.items():
         if param.kind in (param.VAR_KEYWORD, param.VAR_POSITIONAL):
             continue
-        if param.default is inspect._empty and name not in args:
+        if param.default is inspect.Parameter.empty and name not in args:
             errors.append(f"missing arg: {name}")
     return errors
 

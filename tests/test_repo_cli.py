@@ -81,6 +81,16 @@ class RepoCliTests(unittest.TestCase):
         self.assertIn("Two Sum", notes_path.read_text())
         notes_path.unlink()
 
+    def test_random_empty_filter_returns_friendly_error(self):
+        result = self.run_cli("random", "--difficulty", "Impossible")
+        self.assertEqual(result.returncode, 2, result.stdout)
+        self.assertIn("no problems match those filters", result.stdout)
+
+    def test_hint_zero_is_rejected(self):
+        result = self.run_cli("hint", "3", "0")
+        self.assertEqual(result.returncode, 2, result.stdout)
+        self.assertIn("hint 0 is not available", result.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

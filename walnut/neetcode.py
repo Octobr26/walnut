@@ -1,11 +1,12 @@
 from __future__ import annotations
 
-import json
 import re
 import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
+
+from .repo import load_json, write_json
 
 
 ROADMAP_URL = "https://neetcode.io/roadmap"
@@ -109,7 +110,17 @@ def _field(obj: str, name: str) -> str | None:
     match = re.search(rf'{re.escape(name)}:"((?:\\.|[^"\\])*)"', obj)
     if not match:
         return None
-    return bytes(match.group(1), "utf-8").decode("unicode_escape")
+    return _decode_js_string(match.group(1))
+
+
+def _decode_js_string(value: str) -> str:
+    def replace(match: re.Match[str]) -> str:
+        escaped = match.group(1)
+        if escaped.startswith("u"):
+            return chr(int(escaped[1:], 16))
+        return {'"': '"', "\\": "\\"}[escaped]
+
+    return re.sub(r'\\(u[0-9a-fA-F]{4}|["\\])', replace, value)
 
 
 def _leetcode_id(code: str) -> int:
@@ -231,7 +242,7 @@ def apply_metadata(root: Path, roadmap: dict[str, Any], scraped: list[RoadmapPro
                 updated += 1
         problem_path = root / local["dir"] / "problem.json"
         if problem_path.exists():
-            problem_json = json.loads(problem_path.read_text(encoding="utf-8"))
+            problem_json = load_json(problem_path)
             for key, value in {
                 "title": scraped_problem.title,
                 "difficulty": scraped_problem.difficulty,
@@ -242,6 +253,7 @@ def apply_metadata(root: Path, roadmap: dict[str, Any], scraped: list[RoadmapPro
                 if problem_json.get(key) != value:
                     problem_json[key] = value
                     updated += 1
-            problem_path.write_text(json.dumps(problem_json, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    (root / "roadmap.json").write_text(json.dumps(roadmap, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+            write_json(problem_path, problem_json)
+    if updated:
+        write_json(root / "roadmap.json", roadmap)
     return updated

@@ -1,13 +1,11 @@
 from __future__ import annotations
 
 import datetime as dt
-import os
-import shutil
 import time
 from pathlib import Path
 from typing import Any
 
-from .repo import walnut_dir, load_json, write_json
+from .repo import load_json, load_problem, solution_path, walnut_dir, write_json
 
 
 TARGET_TIMES = {"Easy": 900, "Medium": 1800, "Hard": 2700}
@@ -15,6 +13,37 @@ TARGET_TIMES = {"Easy": 900, "Medium": 1800, "Hard": 2700}
 
 def today_local() -> str:
     return dt.datetime.now().astimezone().date().isoformat()
+
+
+def current_streak(progress: dict[str, Any], local_date: str | None = None) -> int:
+    today = dt.date.fromisoformat(local_date or today_local())
+    streak = progress.get("streak", {})
+    active_days = set()
+    for value in streak.get("active_days", []):
+        try:
+            active_days.add(dt.date.fromisoformat(value))
+        except (TypeError, ValueError):
+            continue
+
+    if active_days:
+        end = today if today in active_days else today - dt.timedelta(days=1)
+        if end not in active_days:
+            return 0
+        count = 0
+        cursor = end
+        while cursor in active_days:
+            count += 1
+            cursor -= dt.timedelta(days=1)
+        return count
+
+    last = streak.get("last_solved_date")
+    try:
+        last_date = dt.date.fromisoformat(last) if last else None
+    except (TypeError, ValueError):
+        return 0
+    if last_date in {today, today - dt.timedelta(days=1)}:
+        return int(streak.get("current", 0))
+    return 0
 
 
 def default_progress() -> dict[str, Any]:
@@ -51,7 +80,6 @@ def default_problem_record(now: float | None = None) -> dict[str, Any]:
             "reps": 0,
             "lapses": 0,
         },
-        "snapshots": [],
         "slowest_case_sec": None,
     }
 
@@ -95,12 +123,6 @@ def save_selected(root: Path, slug: str, now: float | None = None) -> None:
     write_json(selected_path(root), {"slug": slug, "updated_at": time.time() if now is None else now})
 
 
-def clear_selected(root: Path) -> None:
-    path = selected_path(root)
-    if path.exists():
-        path.unlink()
-
-
 def arm_timer(
     progress: dict[str, Any],
     slug: str,
@@ -119,6 +141,27 @@ def arm_timer(
         new_active["target_sec"] = target_sec
     progress["active"] = new_active
     return True, None
+
+
+def start_problem(
+    root: Path,
+    ref: Any,
+    *,
+    problem: dict[str, Any] | None = None,
+    force: bool = False,
+) -> tuple[bool, str | None, dict[str, Any], Path, bool]:
+    from .files import ensure_solution
+
+    problem = load_problem(root, ref) if problem is None else problem
+    state = load_progress(root)
+    ok, active_slug = arm_timer(state, ref.slug, force=force)
+    if not ok:
+        return False, active_slug, state, solution_path(root, ref), False
+    mark_attempted(state, ref.slug)
+    save_progress(root, state)
+    existed = solution_path(root, ref).exists()
+    solution = ensure_solution(root, ref, problem)
+    return True, None, state, solution, existed
 
 
 def mark_attempted(progress: dict[str, Any], slug: str, now: float | None = None) -> dict[str, Any]:
@@ -225,7 +268,9 @@ def record_test_result(
     record["test_runs"] = int(record.get("test_runs", 0)) + 1
     record["revealed_hints"] = max(int(record.get("revealed_hints", 0)), revealed_hints)
     record["revealed_solution"] = bool(record.get("revealed_solution")) or revealed_solution
-    record["slowest_case_sec"] = slowest_case_sec
+    if slowest_case_sec is not None:
+        previous = record.get("slowest_case_sec")
+        record["slowest_case_sec"] = slowest_case_sec if previous is None else max(float(previous), slowest_case_sec)
 
     history_result = result or ("pass" if passed else "fail")
     record.setdefault("history", []).append(
@@ -276,6 +321,34 @@ def record_test_result(
     return record
 
 
+def record_run(root: Path, ref: Any, problem: dict[str, Any], result: Any) -> tuple[dict[str, Any], dict[str, Any], int | None]:
+    state = load_progress(root)
+    active = state.get("active")
+    now = time.time()
+    elapsed: int | None = None
+    if active and active.get("slug") == ref.slug:
+        elapsed = int(now - float(active["started_at"]))
+    record = ensure_problem(state, ref.slug, now)
+    target_sec = int(active["target_sec"]) if active and active.get("target_sec") else TARGET_TIMES.get(problem.get("difficulty", "Medium"), 1800)
+    saved_record = record_test_result(
+        state,
+        slug=ref.slug,
+        passed=result.ok,
+        cases_passed=result.passed,
+        cases_total=result.total,
+        now=now,
+        local_date=today_local(),
+        time_sec=elapsed,
+        target_sec=target_sec,
+        revealed_hints=int(record.get("revealed_hints", 0)),
+        revealed_solution=bool(record.get("revealed_solution")),
+        slowest_case_sec=result.slowest_case_sec,
+        result="pass" if result.ok else ("timeout" if result.timed_out else "fail"),
+    )
+    save_progress(root, state)
+    return state, saved_record, elapsed
+
+
 def reset_problem(root: Path, progress: dict[str, Any], slug: str, solution_path: Path, hard: bool = False) -> None:
     if solution_path.exists():
         solution_path.unlink()
@@ -283,16 +356,12 @@ def reset_problem(root: Path, progress: dict[str, Any], slug: str, solution_path
         progress["active"] = None
     if hard:
         progress.get("problems", {}).pop(slug, None)
-        snapshots = walnut_dir(root) / "snapshots" / slug
-        if snapshots.exists():
-            shutil.rmtree(snapshots)
         return
 
     record = ensure_problem(progress, slug)
     keep = {
         "history": record.get("history", []),
         "review": record.get("review", default_problem_record()["review"]),
-        "snapshots": record.get("snapshots", []),
     }
     record.update(default_problem_record(record.get("first_seen_at")))
     record.update(keep)

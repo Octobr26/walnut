@@ -17,16 +17,26 @@ from typing import Any
 from . import __version__
 from . import neetcode
 from .files import ensure_notes, ensure_solution
+from .format import (
+    failure_by_case as _failure_by_case,
+    format_time as _format_time,
+    progress_text as _progress_text,
+    short as _short,
+    status_for as _status_for,
+    target_for as _target_for,
+)
 from . import progress as progress_mod
 from .repo import (
     RepoError,
     all_problem_refs,
+    cheatsheet_path,
     find_root,
     load_problem,
     load_roadmap,
     problem_dir,
     resolve_problem,
     resolve_topic,
+    solution_path,
     walnut_dir,
 )
 from .runner import RunResult, run, validate_problem
@@ -77,34 +87,10 @@ def _root_or_exit() -> Path:
         raise SystemExit(3)
 
 
-def _status_for(progress: dict[str, Any], slug: str) -> str:
-    return progress.get("problems", {}).get(slug, {}).get("status", "unsolved")
-
-
 def _next_ref(refs: list[Any], progress: dict[str, Any]) -> Any | None:
     seeded = [ref for ref in refs if ref.seeded and _status_for(progress, ref.slug) != "solved"]
     pool = seeded or [ref for ref in refs if _status_for(progress, ref.slug) != "solved"]
     return pool[0] if pool else None
-
-
-def _target_for(problem: dict[str, Any], active: dict[str, Any] | None = None) -> int:
-    if active and active.get("target_sec"):
-        return int(active["target_sec"])
-    return progress_mod.TARGET_TIMES.get(problem.get("difficulty", "Medium"), 1800)
-
-
-def _format_time(seconds: int | None) -> str:
-    if seconds is None:
-        return "--"
-    minutes, secs = divmod(int(seconds), 60)
-    return f"{minutes}:{secs:02d}"
-
-
-def _short(value: Any, limit: int = 500) -> str:
-    text = repr(value)
-    if len(text) <= limit:
-        return text
-    return text[: limit - 20] + " ... <truncated>"
 
 
 def _difficulty(value: str) -> Any:
@@ -125,21 +111,6 @@ def _pass_fail(ok: bool) -> Any:
     if Text is None:
         return "PASS" if ok else "FAIL"
     return Text("PASS" if ok else "FAIL", style="bold green" if ok else "bold red")
-
-
-def _progress_text(done: int, total: int, width: int = 18) -> Any:
-    if Text is None:
-        return f"{done}/{total}"
-    total = max(total, 1)
-    filled = round(width * min(done, total) / total)
-    text = Text()
-    text.append("█" * filled, style="green" if done >= total else "cyan")
-    text.append("░" * (width - filled), style="dim")
-    return text
-
-
-def _failure_by_case(result: RunResult) -> dict[int, Any]:
-    return {failure.index: failure for failure in result.failures}
 
 
 def _print_run_result(problem: dict[str, Any], result: RunResult, perf: bool = False, flags: dict[str, bool] | None = None) -> None:
@@ -488,8 +459,7 @@ def cmd_show(args: argparse.Namespace, flags: dict[str, bool]) -> int:
 
 
 def _launch_editor(path: Path) -> None:
-    config_editor = None
-    editor = config_editor or os.environ.get("VISUAL") or os.environ.get("EDITOR")
+    editor = os.environ.get("VISUAL") or os.environ.get("EDITOR")
     if not editor:
         for candidate in ("nano", "vim", "notepad"):
             if shutil.which(candidate):
@@ -508,15 +478,10 @@ def cmd_pick(args: argparse.Namespace, flags: dict[str, bool]) -> int:
     root = _root_or_exit()
     ref = resolve_problem(root, args.id)
     problem = load_problem(root, ref)
-    state = progress_mod.load_progress(root)
-    ok, active_slug = progress_mod.arm_timer(state, ref.slug, force=args.force)
+    ok, active_slug, state, solution, existed = progress_mod.start_problem(root, ref, problem=problem, force=args.force)
     if not ok:
         print(f"timer already active for {active_slug}; rerun with --force to replace it")
         return 2
-    progress_mod.mark_attempted(state, ref.slug)
-    progress_mod.save_progress(root, state)
-    existed = (problem_dir(root, ref) / "solution.py").exists()
-    solution = ensure_solution(root, ref, problem)
     if (console := _console(flags)):
         info = Table.grid(padding=(0, 2))
         info.add_column(style="bold cyan", no_wrap=True)
@@ -550,14 +515,10 @@ def cmd_open(args: argparse.Namespace, flags: dict[str, bool]) -> int:
     root = _root_or_exit()
     ref = resolve_problem(root, args.id)
     problem = load_problem(root, ref)
-    state = progress_mod.load_progress(root)
-    ok, active_slug = progress_mod.arm_timer(state, ref.slug, force=args.force)
+    ok, active_slug, _state, solution, _existed = progress_mod.start_problem(root, ref, problem=problem, force=args.force)
     if not ok:
         print(f"timer already active for {active_slug}; rerun with --force to replace it")
         return 2
-    progress_mod.mark_attempted(state, ref.slug)
-    progress_mod.save_progress(root, state)
-    solution = ensure_solution(root, ref, problem)
     if not problem.get("seeded"):
         print("warning: not seeded yet - see the LeetCode link; local tests are unavailable")
     _launch_editor(solution)
@@ -573,29 +534,7 @@ def _run_problem(root: Path, ref: Any, mutate: bool, perf: bool = False, flags: 
     flags = flags or {"plain": True, "json": False, "debug": False}
     _print_run_result(problem, result, perf=perf, flags=flags)
     if mutate:
-        state = progress_mod.load_progress(root)
-        active = state.get("active")
-        now = time.time()
-        elapsed: int | None = None
-        if active and active.get("slug") == ref.slug:
-            elapsed = int(now - float(active["started_at"]))
-        record = progress_mod.ensure_problem(state, ref.slug, now)
-        progress_mod.record_test_result(
-            state,
-            slug=ref.slug,
-            passed=result.ok,
-            cases_passed=result.passed,
-            cases_total=result.total,
-            now=now,
-            local_date=progress_mod.today_local(),
-            time_sec=elapsed,
-            target_sec=_target_for(problem, active),
-            revealed_hints=int(record.get("revealed_hints", 0)),
-            revealed_solution=bool(record.get("revealed_solution")),
-            slowest_case_sec=result.slowest_case_sec,
-            result="pass" if result.ok else ("timeout" if any("timed out" in (f.error or "") for f in result.failures) else "fail"),
-        )
-        progress_mod.save_progress(root, state)
+        _state, record, elapsed = progress_mod.record_run(root, ref, problem, result)
         if result.ok:
             if (console := _console(flags)):
                 console.print(
@@ -632,7 +571,7 @@ def cmd_hint(args: argparse.Namespace, flags: dict[str, bool]) -> int:
     hints = problem.get("hints", [])
     state = progress_mod.load_progress(root)
     record = progress_mod.ensure_problem(state, ref.slug, time.time())
-    index = args.n or (int(record.get("revealed_hints", 0)) + 1)
+    index = args.n if args.n is not None else (int(record.get("revealed_hints", 0)) + 1)
     if index < 1 or index > len(hints):
         print(f"hint {index} is not available")
         return 2
@@ -653,10 +592,11 @@ def cmd_solution(args: argparse.Namespace, flags: dict[str, bool]) -> int:
         answer = input("Show reference solution? [y/N] ").strip().lower()
         if answer != "y":
             return 0
+    solution = (problem_dir(root, ref) / "reference.py").read_text(encoding="utf-8")
     state = progress_mod.load_progress(root)
     progress_mod.reveal_solution(state, ref.slug)
     progress_mod.save_progress(root, state)
-    print((problem_dir(root, ref) / "reference.py").read_text(encoding="utf-8"))
+    print(solution)
     return 0
 
 
@@ -664,7 +604,7 @@ def cmd_reset(args: argparse.Namespace, flags: dict[str, bool]) -> int:
     root = _root_or_exit()
     ref = resolve_problem(root, args.id)
     state = progress_mod.load_progress(root)
-    progress_mod.reset_problem(root, state, ref.slug, problem_dir(root, ref) / "solution.py", hard=args.hard)
+    progress_mod.reset_problem(root, state, ref.slug, solution_path(root, ref), hard=args.hard)
     progress_mod.save_progress(root, state)
     print(f"reset {ref.title}{' (hard)' if args.hard else ''}")
     return 0
@@ -732,7 +672,8 @@ def cmd_home(args: argparse.Namespace, flags: dict[str, bool]) -> int:
     solved = sum(1 for ref in refs if _status_for(state, ref.slug) == "solved")
     attempted = sum(1 for ref in refs if _status_for(state, ref.slug) == "attempted")
     next_ref = _next_ref(refs, state)
-    streak = state.get("streak", {})
+    streak = dict(state.get("streak", {}))
+    streak["current"] = progress_mod.current_streak(state)
     active = state.get("active")
 
     data = {
@@ -843,6 +784,9 @@ def cmd_random(args: argparse.Namespace, flags: dict[str, bool]) -> int:
     if args.unsolved:
         state = progress_mod.load_progress(root)
         refs = [ref for ref in refs if _status_for(state, ref.slug) != "solved"]
+    if not refs:
+        print("no problems match those filters")
+        return 2
     ref = random.choice(refs)
     if (console := _console(flags)):
         console.print(
@@ -936,7 +880,7 @@ def cmd_open_official(args: argparse.Namespace, flags: dict[str, bool]) -> int:
     ref = resolve_problem(root, args.id)
     problem = load_problem(root, ref)
     if args.site == "neetcode":
-        url = problem.get("neetcode_url") or f"https://neetcode.io/roadmap"
+        url = problem.get("neetcode_url") or "https://neetcode.io/roadmap"
     else:
         url = problem.get("leetcode_url") or ref.leetcode_url
     if args.print_url:
@@ -957,38 +901,33 @@ CHEAT_ALIASES = {
 }
 
 
-def _cheatsheet_dir(root: Path) -> Path:
-    return root / "docs" / "cheatsheets"
-
-
 def _resolve_cheatsheet(root: Path, token: str | None) -> Path | None:
     """Map a token (topic id/slug/name, problem id, or alias) to a sheet path."""
-    sheets = _cheatsheet_dir(root)
     if token is None:
         state = progress_mod.load_progress(root)
         active = state.get("active")
         if not active:
             return None
         ref = resolve_problem(root, active["slug"])
-        return sheets / f"{ref.topic_slug}.md"
+        return cheatsheet_path(root, ref.topic_slug)
 
     text = token.strip().lower()
     if text in CHEAT_ALIASES:
-        return sheets / f"{CHEAT_ALIASES[text]}.md"
+        return cheatsheet_path(root, CHEAT_ALIASES[text])
     if text.isdigit():
         ref = resolve_problem(root, text)
-        return sheets / f"{ref.topic_slug}.md"
+        return cheatsheet_path(root, ref.topic_slug)
     try:
         topic = resolve_topic(load_roadmap(root), text)
-        return sheets / f"{topic['slug']}.md"
+        return cheatsheet_path(root, topic["slug"])
     except KeyError:
         ref = resolve_problem(root, text)
-        return sheets / f"{ref.topic_slug}.md"
+        return cheatsheet_path(root, ref.topic_slug)
 
 
 def cmd_cheat(args: argparse.Namespace, flags: dict[str, bool]) -> int:
     root = _root_or_exit()
-    sheets = _cheatsheet_dir(root)
+    sheets = cheatsheet_path(root, "python-stdlib").parent
     if args.list or (args.topic is None and _resolve_cheatsheet(root, None) is None):
         names = sorted(path.stem for path in sheets.glob("*.md"))
         if flags["json"]:
@@ -1052,13 +991,23 @@ def cmd_notes(args: argparse.Namespace, flags: dict[str, bool]) -> int:
 def cmd_selected(args: argparse.Namespace, flags: dict[str, bool]) -> int:
     root = _root_or_exit()
     interval = max(float(args.poll), 0.1)
+    decode_errors = 0
 
     while True:
-        selected = progress_mod.load_selected(root)
-        slug = selected.get("slug")
-        if not slug:
-            active = progress_mod.load_progress(root).get("active") or {}
-            slug = active.get("slug")
+        try:
+            selected = progress_mod.load_selected(root)
+            slug = selected.get("slug")
+            if not slug:
+                active = progress_mod.load_progress(root).get("active") or {}
+                slug = active.get("slug")
+            decode_errors = 0
+        except json.JSONDecodeError as exc:
+            decode_errors += 1
+            if decode_errors > 1 or not args.wait:
+                print(f"error: selected state is not valid JSON: {exc}", file=sys.stderr)
+                return 3
+            time.sleep(interval)
+            continue
 
         if slug:
             ref = resolve_problem(root, slug)
@@ -1091,7 +1040,6 @@ def build_parser() -> argparse.ArgumentParser:
     list_p.add_argument("--difficulty")
     list_p.add_argument("--status", choices=["unsolved", "attempted", "solved"])
     list_p.add_argument("--ready", action="store_true")
-    list_p.add_argument("--due", action="store_true")
     list_p.set_defaults(func=cmd_list)
 
     show = sub.add_parser("show")
@@ -1117,11 +1065,6 @@ def build_parser() -> argparse.ArgumentParser:
     test.add_argument("id")
     test.add_argument("--perf", action="store_true")
     test.set_defaults(func=cmd_test)
-
-    testv2 = sub.add_parser("testv2")
-    testv2.add_argument("id")
-    testv2.add_argument("--perf", action="store_true")
-    testv2.set_defaults(func=cmd_test)
 
     run_p = sub.add_parser("run")
     run_p.add_argument("id")
@@ -1211,6 +1154,8 @@ def main(argv: list[str] | None = None) -> int:
     except (KeyError, ValueError) as exc:
         print(f"error: {exc}")
         return 2
+    except KeyboardInterrupt:
+        return 130
     except Exception as exc:
         if flags.get("debug"):
             raise

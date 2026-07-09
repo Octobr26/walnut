@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable
@@ -58,9 +59,23 @@ def load_json(path: Path) -> Any:
 
 def write_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8") as fh:
-        json.dump(data, fh, indent=2, sort_keys=True)
-        fh.write("\n")
+    tmp_path: Path | None = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            "w",
+            encoding="utf-8",
+            dir=path.parent,
+            prefix=f".{path.name}.",
+            suffix=".tmp",
+            delete=False,
+        ) as fh:
+            tmp_path = Path(fh.name)
+            json.dump(data, fh, indent=2, sort_keys=True)
+            fh.write("\n")
+        os.replace(tmp_path, path)
+    finally:
+        if tmp_path is not None and tmp_path.exists():
+            tmp_path.unlink()
 
 
 def load_roadmap(root: Path) -> dict[str, Any]:
@@ -148,6 +163,14 @@ def resolve_topic(roadmap: dict[str, Any], token: str | None) -> dict[str, Any] 
 
 def problem_dir(root: Path, ref: ProblemRef) -> Path:
     return root / ref.dir
+
+
+def solution_path(root: Path, ref: ProblemRef) -> Path:
+    return problem_dir(root, ref) / "solution.py"
+
+
+def cheatsheet_path(root: Path, slug: str) -> Path:
+    return root / "docs" / "cheatsheets" / f"{slug}.md"
 
 
 def load_problem(root: Path, ref: ProblemRef) -> dict[str, Any]:
