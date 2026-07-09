@@ -326,7 +326,7 @@ if TEXTUAL_AVAILABLE:
             else:
                 text.append("  start attempt")
             text.append("  |  ")
-            text.append("tests ready" if problem.get("seeded") else "tests unavailable")
+            text.append("local tests ready" if problem.get("seeded") else "link-only; no local tests yet")
             text.append("  |  edit  notes  cheat\n", style="dim")
 
             text.append("\nLocal\n", style="bold")
@@ -405,7 +405,7 @@ if TEXTUAL_AVAILABLE:
             self._append_problem_context(text, ref, problem, status)
             text.append(f"\n{problem['leetcode_url']}\n", style="dim")
             if not problem.get("seeded"):
-                text.append("\nNot seeded: no local tests yet.\n", style="yellow")
+                text.append("\nLink-only problem: no local tests, hints, or reference yet.\n", style="yellow")
             detail.update(text)
             self._render_tests()
             self.query_one("#detail-scroll", VerticalScroll).scroll_home(animate=False)
@@ -697,9 +697,13 @@ if TEXTUAL_AVAILABLE:
             self.progress = state
             self._progress_stamp = self._progress_file_stamp()
             self._refresh_lists(ref.slug)
+            self._render_detail()
             self._render_status()
             verb = "ready" if existed else "created"
-            self.notify(f"{verb}: {solution.name}", timeout=4)
+            message = f"{verb}: {solution.name}"
+            if not problem.get("seeded"):
+                message += "\nlink-only: no local tests yet"
+            self.notify(message, timeout=6 if not problem.get("seeded") else 4)
             self._open_nvim_window("editor", solution)
 
         def action_editor(self) -> None:
