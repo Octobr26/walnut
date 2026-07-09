@@ -84,7 +84,7 @@ if TEXTUAL_AVAILABLE:
         #left { width: 44%; min-width: 40; background: $surface; }
         #detail-tabs { width: 1fr; border-left: solid $panel; background: $surface; }
         #detail-scroll, #test-scroll { padding: 1 2; background: $surface; }
-        #status { dock: bottom; height: 2; padding: 0 1; background: $panel; border-top: solid $primary; }
+        #status { dock: bottom; height: 4; padding: 0 1; background: $panel; border-top: solid $primary; }
         TabbedContent { height: 1fr; }
         TabPane { padding: 0 1 0 0; }
         OptionList { height: 1fr; border: none; background: transparent; }
@@ -244,6 +244,104 @@ if TEXTUAL_AVAILABLE:
                 return None
             return self.by_slug.get(option.id.split(":", 1)[1])
 
+        def _last_test(self, slug: str) -> dict[str, Any] | None:
+            history = self.progress.get("problems", {}).get(slug, {}).get("history", [])
+            return history[-1] if history else None
+
+        def _append_action(self, text: Text, label: str, key: str) -> None:
+            if len(text):
+                text.append("   ", style="dim")
+            text.append(label)
+            text.append(" [", style="dim")
+            text.append(key, style="bold cyan")
+            text.append("]", style="dim")
+
+        def _action_bar(self) -> Text:
+            filter_input = self.query_one("#filter", Input)
+            text = Text()
+            if filter_input.has_focus or self.filter_text:
+                self._append_action(text, "Apply", "enter")
+                self._append_action(text, "Clear filter", "esc")
+                self._append_action(text, "Quit", "q")
+                return text
+
+            detail_tabs = self.query_one("#detail-tabs", TabbedContent)
+            if detail_tabs.active == "tab-tests":
+                self._append_action(text, "Problem", "esc")
+                self._append_action(text, "Rerun", "t")
+                self._append_action(text, "Edit", "e")
+                self._append_action(text, "Notes", "n")
+                self._append_action(text, "Quit", "q")
+                return text
+
+            ref = self._highlighted_ref()
+            if ref is not None:
+                self._append_action(text, "Start", "s")
+                self._append_action(text, "Test", "t")
+                self._append_action(text, "Edit", "e")
+                self._append_action(text, "Reset", "r")
+                self._append_action(text, "Notes", "n")
+                self._append_action(text, "Cheat", "c")
+                self._append_action(text, "Back", "esc")
+                self._append_action(text, "Quit", "q")
+                return text
+
+            option = self._highlighted_option()
+            if option is not None and option.id and option.id.startswith("topic:"):
+                self._append_action(text, "Open", "enter")
+                self._append_action(text, "Cheat", "c")
+                self._append_action(text, "Filter", "/")
+                self._append_action(text, "Switch list", "[ ]")
+                self._append_action(text, "Quit", "q")
+                return text
+
+            self._append_action(text, "Filter", "/")
+            self._append_action(text, "Switch list", "[ ]")
+            self._append_action(text, "Quit", "q")
+            return text
+
+        def _append_problem_context(
+            self,
+            text: Text,
+            ref: ProblemRef,
+            problem: dict[str, Any],
+            status: str,
+        ) -> None:
+            pdir = problem_dir(self.root, ref)
+            solution = pdir / "solution.py"
+            notes = pdir / "notes.md"
+            active = self.progress.get("active") or {}
+            is_active = active.get("slug") == ref.slug
+            last = self._last_test(ref.slug)
+
+            text.append("\nNext\n", style="bold cyan")
+            if is_active:
+                started = float(active.get("started_at", time.time()))
+                target = int(active.get("target_sec") or _target_for(problem, active))
+                text.append(f"  timer {_format_time(int(time.time() - started))}/{_format_time(target)}")
+            elif status == "solved":
+                text.append("  review or rerun")
+            elif status == "attempted":
+                text.append("  fix attempt")
+            else:
+                text.append("  start attempt")
+            text.append("  |  ")
+            text.append("tests ready" if problem.get("seeded") else "tests unavailable")
+            text.append("  |  edit  notes  cheat\n", style="dim")
+
+            text.append("\nLocal\n", style="bold")
+            text.append(f"  solution.py  {'ready' if solution.exists() else 'not created'}\n")
+            text.append(f"  notes.md     {'ready' if notes.exists() else 'not created'}\n")
+            if last:
+                ok = last.get("result") == "pass"
+                text.append("  last test    ")
+                text.append(
+                    f"{last.get('result', 'unknown')} {last.get('cases_passed')}/{last.get('cases_total')}\n",
+                    style="green" if ok else "red",
+                )
+            else:
+                text.append("  last test    none\n", style="dim")
+
         # ---------- detail pane ----------
 
         def _render_detail(self) -> None:
@@ -304,6 +402,7 @@ if TEXTUAL_AVAILABLE:
                 text.append("\nConstraints\n", style="bold magenta")
                 for constraint in constraints:
                     text.append(f"  - {constraint}\n")
+            self._append_problem_context(text, ref, problem, status)
             text.append(f"\n{problem['leetcode_url']}\n", style="dim")
             if not problem.get("seeded"):
                 text.append("\nNot seeded: no local tests yet.\n", style="yellow")
@@ -387,50 +486,66 @@ if TEXTUAL_AVAILABLE:
 
         def _render_status(self) -> None:
             status = self.query_one("#status", Static)
-            line1 = Text()
+            summary = Text()
+            ref = self._highlighted_ref()
+            option = self._highlighted_option()
+            if ref is not None:
+                current_status = _status_for(self.progress, ref.slug)
+                diff_style = {"Easy": "green", "Medium": "yellow", "Hard": "red"}.get(ref.difficulty, "white")
+                summary.append(f"#{ref.id} {ref.title}", style="bold")
+                summary.append("  ")
+                summary.append(ref.difficulty, style=diff_style)
+                summary.append("  ")
+                summary.append(current_status, style=STATUS_ICONS.get(current_status, ("", "dim"))[1])
+            elif option is not None and option.id and option.id.startswith("topic:"):
+                topic = self._topic(option.id.split(":", 1)[1])
+                solved = sum(
+                    1 for p in topic["problems"] if _status_for(self.progress, p["slug"]) == "solved"
+                )
+                summary.append(topic["name"], style="bold")
+                summary.append(f"  {solved}/{len(topic['problems'])} solved", style="dim")
+            else:
+                summary.append("Select a topic or problem", style="dim")
+
             active = self.progress.get("active")
             if active:
                 slug = active.get("slug") or ""
-                ref = self.by_slug.get(slug)
+                active_ref = self.by_slug.get(slug)
                 started = float(active.get("started_at", time.time()))
                 elapsed = int(time.time() - started)
                 target = int(
                     active.get("target_sec")
-                    or progress_mod.TARGET_TIMES.get(ref.difficulty if ref else "Medium", 1800)
+                    or progress_mod.TARGET_TIMES.get(active_ref.difficulty if active_ref else "Medium", 1800)
                 )
                 over = elapsed > target
-                line1.append("active ", style="bold cyan")
-                line1.append(f"#{ref.id} {ref.title}" if ref else (slug or "--"))
-                line1.append("  ⏱ ")
-                line1.append(
+                summary.append("   Timer ")
+                summary.append(f"#{active_ref.id} " if active_ref else f"{slug or '--'} ", style="cyan")
+                summary.append(
                     f"{_format_time(elapsed)}/{_format_time(target)}",
                     style="red" if over else "green",
                 )
-                history = self.progress.get("problems", {}).get(slug, {}).get("history", [])
-                if history:
-                    last = history[-1]
+                last = self._last_test(slug)
+                if last:
                     ok = last.get("result") == "pass"
-                    line1.append("  last test ")
-                    line1.append(
+                    summary.append("   Last test ")
+                    summary.append(
                         f"{'✓' if ok else '✗'} {last.get('cases_passed')}/{last.get('cases_total')}",
                         style="green" if ok else "red",
                     )
-            else:
-                line1.append("no active problem", style="dim")
-                line1.append("  (highlight one and press s)", style="dim")
 
             solved = sum(1 for ref in self.refs if _status_for(self.progress, ref.slug) == "solved")
             total = len(self.refs)
-            line2 = Text()
-            line2.append(f"{solved}/{total} solved ", style="bold")
-            line2.append(_progress_bar(solved, total))
+            summary.append("   ")
+            summary.append(f"{solved}/{total} solved ", style="bold")
+            summary.append(_progress_bar(solved, total, 10))
             streak = progress_mod.current_streak(self.progress)
-            line2.append(f"  streak {streak}d", style="magenta")
-            line2.append(
-                "   s start  e editor  n notes  t test  r reset  [ ] tabs  c cheat  / filter  esc back  q quit",
-                style="dim",
-            )
-            status.update(Text("\n").join([line1, line2]))
+            summary.append(f"  streak {streak}d", style="magenta")
+            if self.filter_text:
+                summary.append(f"  filter {self.filter_text!r}", style="yellow")
+            if self.drilled is not None:
+                summary.append(f"  in {self._topic(self.drilled)['name']}", style="cyan")
+
+            status.update(Text("\n").join([summary, Text(), self._action_bar()]))
 
         def _tick(self) -> None:
             if self._reload_progress_if_changed():
@@ -442,6 +557,7 @@ if TEXTUAL_AVAILABLE:
 
         def on_option_list_option_highlighted(self, event: OptionList.OptionHighlighted) -> None:
             self._render_detail()
+            self._render_status()
 
         def on_option_list_option_selected(self, event: OptionList.OptionSelected) -> None:
             if event.option.id and event.option.id.startswith("topic:"):
@@ -449,17 +565,21 @@ if TEXTUAL_AVAILABLE:
                 self.filter_text = ""
                 self._populate_topics()
                 self._render_detail()
+                self._render_status()
 
         def on_tabbed_content_tab_activated(self, event: TabbedContent.TabActivated) -> None:
             self._render_detail()
+            self._render_status()
 
         def on_input_changed(self, event: Input.Changed) -> None:
             self.filter_text = event.value.strip()
             self._refresh_lists()
             self._render_detail()
+            self._render_status()
 
         def on_input_submitted(self, event: Input.Submitted) -> None:
             self._active_list().focus()
+            self._render_status()
 
         # ---------- actions ----------
 
@@ -493,6 +613,7 @@ if TEXTUAL_AVAILABLE:
             if detail_tabs.active == "tab-tests":
                 self._select_detail_tab("tab-problem")
                 self._active_list().focus()
+                self._render_status()
                 return
             if self.drilled is not None:
                 previous = self.drilled
@@ -504,11 +625,13 @@ if TEXTUAL_AVAILABLE:
                         lst.highlighted = index
                         break
                 self._render_detail()
+                self._render_status()
 
         def action_filter(self) -> None:
             filter_input = self.query_one("#filter", Input)
             filter_input.add_class("visible")
             filter_input.focus()
+            self._render_status()
 
         def _select_detail_tab(self, tab_id: str) -> None:
             self.query_one("#detail-tabs", TabbedContent).active = tab_id
@@ -576,7 +699,8 @@ if TEXTUAL_AVAILABLE:
             self._refresh_lists(ref.slug)
             self._render_status()
             verb = "ready" if existed else "created"
-            self.notify(f"{verb}: {solution}\ntest: walnut test {ref.id} --perf", timeout=8)
+            self.notify(f"{verb}: {solution.name}", timeout=4)
+            self._open_nvim_window("editor", solution)
 
         def action_editor(self) -> None:
             ref = self._highlighted_ref()
