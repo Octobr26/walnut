@@ -2,6 +2,13 @@
 
 This is the shortest path from a fresh clone to solving a problem.
 
+## 0. Clone
+
+```bash
+git clone <repo-url>
+cd walnut
+```
+
 ## 1. Setup
 
 From the repo root:
@@ -14,14 +21,32 @@ The setup script does four things:
 
 - checks that Python 3.9+ is available
 - creates a local `.venv/` and installs the normal CLI and TUI dependencies there
-- makes the `walnut` command available on your shell `PATH` when needed
+- writes a `walnut` wrapper to `~/.local/bin/walnut`
 - runs `walnut doctor` and `walnut verify --all`
 
-If it updates your shell profile, open a new terminal or run the command it prints,
-usually:
+By default, setup does not edit your shell profile.
+It prints the exact PATH line you can add yourself.
+Pass `--modify-profile` if you want setup to add that line for you.
+
+For the current terminal session, add the wrapper directory to `PATH`:
 
 ```bash
-source ~/.zshrc
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+Useful setup knobs:
+
+```bash
+PYTHON=python3.13 ./setup
+WALNUT_VENV=.venv ./setup
+WALNUT_BIN_DIR="$HOME/.local/bin" ./setup
+./setup --modify-profile
+```
+
+Runtime repo discovery also supports `WALNUT_HOME`:
+
+```bash
+WALNUT_HOME=/path/to/walnut walnut doctor
 ```
 
 ## 2. Browse
@@ -43,6 +68,9 @@ Start Two Sum:
 ```bash
 walnut pick 3
 ```
+
+Problem ids are the first column of `walnut list`.
+They follow the global NeetCode 150 order; topic ids are the first column of `walnut topics`.
 
 Edit the created file:
 
@@ -96,13 +124,14 @@ make smoke
 Or without `make`:
 
 ```bash
-python3 -m unittest discover -s tests
+.venv/bin/python -m unittest discover -s tests
 walnut verify --all --plain
 ```
 
 ## If `walnut` Is Not Found
 
-Run:
+`./setup` writes the command wrapper to `~/.local/bin/walnut`.
+If your shell cannot find it, add that directory to `PATH`:
 
 ```bash
 export PATH="$HOME/.local/bin:$PATH"
@@ -118,5 +147,5 @@ source ~/.zshrc
 You can always use the fallback from the repo root:
 
 ```bash
-python3 -m walnut.cli doctor
+.venv/bin/python -m walnut.cli doctor
 ```

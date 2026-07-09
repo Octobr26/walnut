@@ -10,6 +10,15 @@
 
 ---
 
+### Design vs shipped
+
+This document is the original design, not an exact map of the current implementation.
+Some planned commands in §12 are not shipped, including `timer`, `stats`, `focus`, `review`, `history`, `snapshot*`, `config`, and `add`.
+The install path in §8 was replaced by `./setup`, which creates `.venv/`, installs editable mode, and writes a `walnut` wrapper.
+Plain `walnut` opens the TUI in an interactive terminal; use `walnut home` for the static dashboard.
+
+---
+
 ### How to use this document
 This is a self-contained, implementation-ready spec. An agent should be able to build the whole tool from it without further questions. Sections are ordered so you can implement in phases (see **§20 Build Milestones**). Where a JSON example has to omit comments (JSON forbids them), the authoritative field definitions live in the accompanying field tables.
 

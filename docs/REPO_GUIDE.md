@@ -26,44 +26,27 @@ walnut show 3
 In an interactive terminal, plain `walnut` opens the TUI.
 Use `walnut home` for the static dashboard.
 
-Install it with:
-
-```bash
-./setup
-```
-
-If your shell says `walnut: command not found`, the local command directory is not on `PATH`.
-Add it:
-
-```bash
-export PATH="$HOME/.local/bin:$PATH"
-```
-
-To make that permanent in zsh:
-
-```bash
-echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
-source ~/.zshrc
-```
-
-The fallback always works from the repo root:
-
-```bash
-python3 -m walnut.cli doctor
-```
+If your shell says `walnut: command not found`, use the PATH fix in [Quickstart](QUICKSTART.md#if-walnut-is-not-found).
 
 There is also a `Makefile` for common repo tasks:
 
 ```bash
+make setup
+make install
 make doctor
 make topics
 make list TOPIC=two-pointers
 make show ID=3
 make pick ID=3
 make test ID=3
+make run ID=3
 make verify
 make unit
 make smoke
+make sync
+make links ID=3
+make notes ID=3
+make tui
 ```
 
 ## Top-Level Map
@@ -72,11 +55,12 @@ make smoke
 README.md                         quickstart
 walnut-plan-and-technical-design.md
 pyproject.toml                    package metadata and console entry point
-setup.py                          compatibility shim for older editable installs
+setup                             local venv installer and command wrapper writer
 roadmap.json                      master index of all 150 problems
 Makefile                          short local commands
 
 walnut/                           CLI source code
+docs/                             quickstart, repo guide, and cheat sheets
 problems/                         problem catalog and seeded content
 tests/                            unit and smoke tests
 tools/seed_content.py             regenerates the roadmap/problem skeleton
@@ -89,8 +73,10 @@ _template/                        starter files for future seeded problems
 ```text
 walnut/cli.py        argparse commands and command output
 walnut/repo.py       repo discovery, roadmap loading, id/slug/topic resolution
+walnut/files.py      local solution and notes file creation
 walnut/runner.py     imports solution/reference modules, runs cases, compares output
 walnut/progress.py   reads/writes .walnut/progress.json and solve history
+walnut/tui.py        Textual terminal interface
 walnut/neetcode.py   safe NeetCode roadmap metadata sync
 ```
 
@@ -160,7 +146,7 @@ walnut notes 3
 Run the Python tests:
 
 ```bash
-python3 -m unittest discover -s tests
+.venv/bin/python -m unittest discover -s tests
 ```
 
 Verify all seeded reference solutions against local cases:
@@ -211,5 +197,5 @@ These are intentionally ignored:
 .walnut/
 ```
 
-That means your attempts, notes, timers, progress, and snapshots stay local and do not pollute
+That means your attempts, notes, timers, and progress stay local and do not pollute
 the repo.
