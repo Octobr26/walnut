@@ -1,18 +1,18 @@
 <h1 align="center">🌰 walnut</h1>
 
 <p align="center">
-  <strong>Offline LeetCode CLI for terminal-native practice.</strong>
+  <strong>Offline coding-practice CLI for terminal-native practice.</strong>
 </p>
 
 <p align="center">
   <img alt="Python 3.9+" src="https://img.shields.io/badge/python-3.9%2B-3776AB?style=flat-square&logo=python&logoColor=white">
   <img alt="Rich and Textual" src="https://img.shields.io/badge/TUI-Rich%20%2B%20Textual-111827?style=flat-square">
-  <img alt="Offline LeetCode CLI" src="https://img.shields.io/badge/use-offline%20LeetCode%20CLI-16A34A?style=flat-square">
+  <img alt="Offline practice CLI" src="https://img.shields.io/badge/use-offline%20practice%20CLI-16A34A?style=flat-square">
   <img alt="NeetCode 150" src="https://img.shields.io/badge/roadmap-NeetCode%20150-F97316?style=flat-square">
   <img alt="Local only" src="https://img.shields.io/badge/data-local--only-7C3AED?style=flat-square">
 </p>
 
-Offline LeetCode CLI I built because nothing kills practice momentum like spotty Wi-Fi on a flight or terrible hotel internet.
+Offline coding-practice CLI I built because nothing kills practice momentum like spotty Wi-Fi on a flight or terrible hotel internet.
 
 Local problems, test runner, starter templates, reference solutions, cheat sheets, progress tracking.
 Terminal-native.
@@ -20,7 +20,7 @@ Stays on your machine.
 
 ## What You Get
 
-- Browse and practice the NeetCode 150 from the terminal.
+- Browse and practice a roadmap based on the public NeetCode 150 ordering from the terminal.
 - Start each problem from a local `starter.py`.
 - Write private attempts in ignored `solution.py` files.
 - Run local tests and track progress under `.walnut/`.
@@ -234,9 +234,15 @@ See the full PATH fix in [Quickstart](docs/QUICKSTART.md#if-walnut-is-not-found)
 - [Quickstart](docs/QUICKSTART.md)
 - [Repo guide](docs/REPO_GUIDE.md)
 
-## Content Note
+## Attribution and Content Policy
+
+Walnut is an independent learning tool and is not affiliated with, endorsed by, or sponsored by LeetCode or NeetCode.
 
 `walnut sync-roadmap` refreshes public roadmap metadata only: titles, topic labels, difficulty, LeetCode IDs, and links.
-It does not copy LeetCode or NeetCode statements, explanations, videos, or solution text.
 
-This project links to LeetCode and follows the NeetCode 150 ordering, but the included statements, test cases, and reference solutions are original.
+This project links to LeetCode problem pages and follows the public NeetCode 150 ordering for navigation.
+LeetCode and NeetCode own their respective names, websites, problem pages, explanations, videos, editorials, and other content.
+
+Walnut does not copy or redistribute LeetCode or NeetCode problem statements, explanations, videos, paid content, editorials, or solution text.
+Seeded prompts, examples, local test cases, hints, and reference solutions in this repo are original Walnut practice material.
+For official problem text, use the linked LeetCode or NeetCode pages.
